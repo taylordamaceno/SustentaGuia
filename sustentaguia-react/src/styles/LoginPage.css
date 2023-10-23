@@ -1,0 +1,22 @@
+.App header {
+    text-align: center;
+    margin: 20px;
+}
+
+.App h1 {
+    font-size: 20px;
+    font-weight: bold;
+    font-style: italic;
+    color: #008b8b;
+}
+
+.App .form-group label {
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+}
+
+.App .btn-primary {
+    /* Estilize seu botão aqui, se necessário */
+}
+

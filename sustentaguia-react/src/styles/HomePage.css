@@ -1,0 +1,74 @@
+/* HomePage.css */
+
+.App {
+    font-family: 'Arial', sans-serif; /* Ajustando a fonte padrão */
+    text-align: center; /* Centralizando o texto horizontalmente */
+    padding: 20px; /* Adicionando um espaço interno para não ficar colado nas bordas */
+}
+
+header {
+    background-color: #f4f4f4; /* Uma cor de fundo leve para o cabeçalho */
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+h1, h2 {
+    color: #333; /* Cor escura para títulos */
+    margin-bottom: 15px; /* Espaço abaixo dos títulos */
+}
+
+p {
+    margin-bottom: 20px; /* Espaço abaixo dos parágrafos */
+    text-align: justify; /* Justifica o texto para uma leitura mais agradável */
+}
+
+a {
+    background-color: #009688; /* Cor de fundo do botão */
+    color: #fff; /* Cor do texto do botão */
+    padding: 10px 20px; /* Espaço interno do botão */
+    text-decoration: none; /* Removendo sublinhado do link */
+    border-radius: 5px; /* Borda arredondada do botão */
+    transition: background-color 0.3s; /* Transição suave para o hover */
+}
+
+a:hover {
+    background-color: #007766; /* Cor de fundo ao passar o mouse sobre o botão */
+}
+
+ul {
+    list-style-type: none; /* Removendo bullets da lista */
+    padding-left: 0; /* Removendo padding padrão da lista */
+}
+
+li {
+    padding: 8px 0; /* Espaço acima e abaixo de cada item da lista */
+}
+
+h1, h2 {
+    font-weight: bold;
+    color: white;
+    text-align: center; /* Isso centralizará os títulos */
+}
+
+p {
+    color: white;
+    text-align: justify; /* Isso fará o texto alinhar justificadamente */
+    padding: 0 15px; /* Isso adiciona algum preenchimento nas laterais do texto */
+}
+
+ul {
+    list-style-type: none; /* Isso remove as bolinhas padrão da lista */
+    padding: 0;
+}
+
+ul li {
+    color: white;
+    padding: 5px 0; /* Isso adiciona um pouco de espaço entre os itens da lista */
+}
+.App header, .App main, .App footer {
+    text-align: center;
+}
+
+.App p, .App h1, .App h2, .App ul {
+    text-align: center;
+}
