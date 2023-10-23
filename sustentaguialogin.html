@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Tela de Cadastro / Login</title>
+</head>
+<body style="background-color: #008b8b;">
+ <header style="text-align: center; margin: 20px;">
+ <img src="sustentaguia.png" alt="Logotipo do aplicativo">	
+  <h1 style="font-size: 20px; font-weight: bold; font-style: italic; color: #008b8b;">Cadastro / Login</h1>
+ </header>
+ <main>
+  <section>
+   <h2 style="font-size: 18px; font-weight: bold; color: #008b8b;">Cadastro</h2>
+   <form action="/cadastro" method="post">
+    <div class="form-group">
+     <label for="nome">Nome</label>
+     <input type="text" class="form-control" id="nome" name="nome" placeholder="Seu nome">
+    </div>
+    <div class="form-group">
+     <label for="email">E-mail</label>
+     <input type="email" class="form-control" id="email" name="email" placeholder="Seu e-mail">
+    </div>
+    <div class="form-group">
+     <label for="senha">Senha</label>
+     <input type="password" class="form-control" id="senha" name="senha" placeholder="Sua senha">
+    </div>
+    <button type="submit" class="btn btn-primary">Cadastrar</button>
+   </form>
+  </section>
+  <section>
+   <h2 style="font-size: 18px; font-weight: bold; color: #008b8b;">Login</h2>
+   <form action="/login" method="post">
+    <div class="form-group">
+     <label for="email">E-mail</label>
+     <input type="email" class="form-control" id="email" name="email" placeholder="Seu e-mail">
+    </div>
+    <div class="form-group">
+     <label for="senha">Senha</label>
+     <input type="password" class="form-control" id="senha" name="senha" placeholder="Sua senha">
+    </div>
+    <button type="submit" class="btn btn-primary">Login</button>
+   </form>
+  </section>
+ </main>
+ <footer>
+  <p style="font-size: 16px; font-weight: normal; color: #008b8b;">Copyright © 2023</p>
+ </footer>
+</body>
+</html>
+
