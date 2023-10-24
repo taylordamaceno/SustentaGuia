@@ -1,0 +1,38 @@
+modules e user_progress.
+
+Tabela de Módulos (modules)
+
+Esta tabela armazenará informações sobre cada módulo disponível.
+sql
+Copy code
+CREATE TABLE modules (
+    id SERIAL PRIMARY KEY,
+    title VARCHAR(255) NOT NULL,
+    description TEXT,
+    icon_path VARCHAR(255),  -- caminho para o ícone do módulo (se estiver armazenando localmente)
+    order_position INTEGER NOT NULL  -- para ordenar os módulos na exibição
+);
+Tabela de Progresso do Usuário (user_progress)
+
+Esta tabela armazenará o progresso de cada usuário para cada módulo.
+sql
+Copy code
+CREATE TABLE user_progress (
+    id SERIAL PRIMARY KEY,
+    user_id INTEGER REFERENCES users(id),
+    module_id INTEGER REFERENCES modules(id),
+    is_completed BOOLEAN DEFAULT FALSE,  -- se o módulo foi concluído pelo usuário
+    quizzes_passed INTEGER DEFAULT 0,   -- número de quizzes passados no módulo
+    last_updated TIMESTAMP DEFAULT CURRENT_TIMESTAMP  -- última vez que o progresso foi atualizado
+);
+Aqui está uma descrição básica do funcionamento:
+
+Quando um usuário completa um módulo ou passa em um quiz, você atualizará a tabela user_progress para refletir esse progresso.
+
+Para exibir o progresso do usuário no frontend, você pode fazer uma consulta que junta as tabelas users, modules, e user_progress para obter o progresso completo de um usuário específico.
+
+A coluna order_position na tabela modules permitirá que você ordene os módulos na exibição. Por exemplo, se você quiser que um módulo específico apareça primeiro, pode dar a ele uma order_position de 1.
+
+Lembre-se, esta é apenas uma modelagem básica. Dependendo das suas necessidades específicas, você pode precisar adicionar mais campos ou tabelas. Por exemplo, se os módulos tiverem submódulos ou lições específicas, você pode querer criar tabelas adicionais para essas entidades.
+
+Uma vez que a modelagem do banco de dados esteja pronta, você pode começar a criar as rotas da API para recuperar a lista de módulos e o progresso do usuário.

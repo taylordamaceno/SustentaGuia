@@ -32,11 +32,17 @@ function LoginPage() {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('/login', {
+      const response = await axios.post('http://localhost:5000/login', { // Adicione o endereço completo aqui
         email: formData.email,
         password: formData.senha
       });
       console.log(response.data);
+
+      // Salvar o token no local storage
+      localStorage.setItem('token', response.data.token);
+
+      // Redirecionar para o dashboard ou página inicial
+      window.location.href = '/dashboard';  // ou a rota que você deseja
     } catch (error) {
       console.error("Erro ao logar:", error.response.data);
     }

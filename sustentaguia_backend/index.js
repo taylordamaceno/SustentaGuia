@@ -3,6 +3,8 @@ const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const cors = require('cors');
 const db = require('./database');
+const modulesRoutes = require('./routes/modules');
+const userProgressRoutes = require('./routes/userProgress');
 
 const app = express();
 const PORT = 5000;
@@ -10,6 +12,10 @@ const SECRET_KEY = "90b7f602d68080c1571d9370b8b8683210595d2bc05677fabedaa61c78fa
 
 app.use(express.json());
 app.use(cors());
+
+// Use os roteadores de módulo e progresso do usuário:
+app.use('/api/modules', modulesRoutes);
+app.use('/api/userProgress', userProgressRoutes);
 
 // Função de middleware para autenticar token JWT
 function authenticateToken(req, res, next) {

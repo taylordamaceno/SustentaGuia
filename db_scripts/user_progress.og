@@ -1,0 +1,9 @@
+CREATE TABLE user_progress (
+    id SERIAL PRIMARY KEY,
+    user_id INTEGER REFERENCES users(id),
+    module_id INTEGER REFERENCES modules(id),
+    is_completed BOOLEAN DEFAULT FALSE,  -- se o módulo foi concluído pelo usuário
+    quizzes_passed INTEGER DEFAULT 0,   -- número de quizzes passados no módulo
+    last_updated TIMESTAMP DEFAULT CURRENT_TIMESTAMP  -- última vez que o progresso foi atualizado
+);
+

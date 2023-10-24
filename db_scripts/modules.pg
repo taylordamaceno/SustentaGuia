@@ -1,0 +1,8 @@
+CREATE TABLE modules (
+    id SERIAL PRIMARY KEY,
+    title VARCHAR(255) NOT NULL,
+    description TEXT,
+    icon_path VARCHAR(255),  -- caminho para o ícone do módulo (se estiver armazenando localmente)
+    order_position INTEGER NOT NULL  -- para ordenar os módulos na exibição
+);
+
