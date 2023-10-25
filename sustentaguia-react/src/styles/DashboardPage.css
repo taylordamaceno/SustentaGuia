@@ -1,0 +1,41 @@
+/* DashboardPage.css */
+
+.App {
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    padding: 20px;
+}
+
+header {
+    background-color: #f4f4f4;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+h1, h2 {
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.modules-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.modules-list li {
+    margin-bottom: 15px;
+}
+
+.module-icon {
+    /* Adicione o estilo para os ícones dos módulos aqui */
+}
+
+/* No arquivo CSS associado ao DashboardPage, por exemplo DashboardPage.css */
+
+.dashboard-logo {
+    width: 15%;  /* Ajuste esse valor conforme necessário */
+    max-width: 300px;  /* Ajuste esse valor conforme necessário */
+    display: block;
+    margin: 0 auto;  /* Centraliza a imagem horizontalmente */
+}
+

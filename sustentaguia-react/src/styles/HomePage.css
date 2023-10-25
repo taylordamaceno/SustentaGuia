@@ -1,74 +1,86 @@
 /* HomePage.css */
 
 .App {
-    font-family: 'Arial', sans-serif; /* Ajustando a fonte padrão */
-    text-align: center; /* Centralizando o texto horizontalmente */
-    padding: 20px; /* Adicionando um espaço interno para não ficar colado nas bordas */
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    padding: 20px;
 }
 
 header {
-    background-color: #f4f4f4; /* Uma cor de fundo leve para o cabeçalho */
+    background-color: #f4f4f4;
     padding: 20px;
     margin-bottom: 20px;
 }
 
 h1, h2 {
-    color: #333; /* Cor escura para títulos */
-    margin-bottom: 15px; /* Espaço abaixo dos títulos */
+    color: #333;
+    margin-bottom: 15px;
 }
 
 p {
-    margin-bottom: 20px; /* Espaço abaixo dos parágrafos */
-    text-align: justify; /* Justifica o texto para uma leitura mais agradável */
+    margin-bottom: 20px;
+    text-align: justify;
 }
 
 a {
-    background-color: #009688; /* Cor de fundo do botão */
-    color: #fff; /* Cor do texto do botão */
-    padding: 10px 20px; /* Espaço interno do botão */
-    text-decoration: none; /* Removendo sublinhado do link */
-    border-radius: 5px; /* Borda arredondada do botão */
-    transition: background-color 0.3s; /* Transição suave para o hover */
+    background-color: #009688;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
 }
 
 a:hover {
-    background-color: #007766; /* Cor de fundo ao passar o mouse sobre o botão */
+    background-color: #007766;
 }
 
 ul {
-    list-style-type: none; /* Removendo bullets da lista */
-    padding-left: 0; /* Removendo padding padrão da lista */
+    list-style-type: none;
+    padding-left: 0;
 }
 
 li {
-    padding: 8px 0; /* Espaço acima e abaixo de cada item da lista */
+    padding: 8px 0;
 }
 
 h1, h2 {
     font-weight: bold;
     color: white;
-    text-align: center; /* Isso centralizará os títulos */
+    text-align: center;
 }
 
 p {
     color: white;
-    text-align: justify; /* Isso fará o texto alinhar justificadamente */
-    padding: 0 15px; /* Isso adiciona algum preenchimento nas laterais do texto */
+    text-align: justify;
+    padding: 0 15px;
 }
 
 ul {
-    list-style-type: none; /* Isso remove as bolinhas padrão da lista */
+    list-style-type: none;
     padding: 0;
 }
 
 ul li {
     color: white;
-    padding: 5px 0; /* Isso adiciona um pouco de espaço entre os itens da lista */
+    padding: 5px 0;
 }
+
 .App header, .App main, .App footer {
     text-align: center;
 }
 
 .App p, .App h1, .App h2, .App ul {
     text-align: center;
+}
+
+.contentWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.guiazinhoImg {
+  width: 20%;
+  margin-left: 20px;
 }
