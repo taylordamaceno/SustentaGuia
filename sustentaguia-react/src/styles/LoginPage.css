@@ -1,6 +1,6 @@
 .App header {
     text-align: center;
-    margin: 20px;
+    margin: 20px 0; /* Ajusta a margem para ser apenas vertical */
 }
 
 .App h1 {
@@ -16,34 +16,82 @@
     color: white;
 }
 
-.App .btn-primary {
-    /* Estilize seu botão aqui, se necessário */
+..App .btn-primary {
+    background-color: #009688; /* Cor de fundo do botão */
+    color: #ffffff; /* Cor do texto do botão */
+    padding: 12px 24px; /* Espaçamento interno do botão */
+    border-radius: 5px; /* Borda arredondada */
+    border: none; /* Remover borda padrão */
+    cursor: pointer; /* Mostrar cursor de mão quando passar o mouse */
+    transition: background-color 0.3s; /* Adicionar animação suave ao alterar a cor de fundo */
+    font-size: 16px; /* Tamanho da fonte do botão */
+    font-weight: bold; /* Texto em negrito */
+    text-align: center; /* Centralizar o texto */
+    display: inline-block; /* Permitir que o botão se ajuste ao conteúdo */
+    text-decoration: none; /* Remover sublinhado (útil se for um link) */
 }
+
+.App .btn-primary:hover {
+    background-color: #007766; /* Cor de fundo do botão quando passar o mouse */
+}
+
+/* Media query para telas menores */
+@media (max-width: 600px) {
+    .App .btn-primary {
+        padding: 10px 20px; /* Reduzir um pouco o espaçamento interno */
+        font-size: 14px; /* Diminuir o tamanho da fonte */
+    }
+}
+
 
 .tabs {
     display: flex;
     justify-content: center;
     margin-bottom: 20px;
-  }
+}
   
-  .tabs button {
+.tabs button {
     padding: 10px 20px;
     margin: 0 10px;
     background: none;
     border: none;
     cursor: pointer;
     font-weight: bold;
-  }
+}
   
-  .tabs button.active {
+.tabs button.active {
     color: #009688;
     border-bottom: 2px solid #009688;
-  }
-  .error-message {
+}
+
+.error-message {
     color: red;
     margin-bottom: 10px;
     text-align: center;
 }
 
+/* Media query para telas menores */
+@media (max-width: 600px) {
+    .App h1 {
+        font-size: 18px; /* Diminui um pouco o tamanho da fonte */
+    }
 
+    .App .form-group label {
+        font-size: 16px;  /* Diminui um pouco o tamanho da fonte */
+    }
 
+    .tabs button {
+        padding: 8px 16px;  /* Reduz o padding do botão */
+        font-size: 0.9rem; /* Diminui um pouco o tamanho da fonte */
+    }
+}
+/* LoginPage.css */
+
+/* LoginPage.css */
+
+.logo-img {
+    width: 50%; /* Ajuste a largura conforme necessário */
+    max-width: 200px; /* Adicione um tamanho máximo */
+    display: block;
+    margin: 0 auto; /* Centraliza a imagem horizontalmente */
+}

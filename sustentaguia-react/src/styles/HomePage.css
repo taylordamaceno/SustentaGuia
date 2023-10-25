@@ -1,9 +1,8 @@
-/* HomePage.css */
-
 .App {
     font-family: 'Arial', sans-serif;
     text-align: center;
     padding: 20px;
+    max-width: 100%;
 }
 
 header {
@@ -56,21 +55,12 @@ p {
     padding: 0 15px;
 }
 
-ul {
-    list-style-type: none;
-    padding: 0;
-}
-
 ul li {
     color: white;
     padding: 5px 0;
 }
 
 .App header, .App main, .App footer {
-    text-align: center;
-}
-
-.App p, .App h1, .App h2, .App ul {
     text-align: center;
 }
 
@@ -81,6 +71,33 @@ ul li {
 }
 
 .guiazinhoImg {
-  width: 20%;
+  width: 50%;  /* Alterado para 50% */
   margin-left: 20px;
+  max-width: 200px; /* Adicionado um tamanho máximo */
 }
+
+@media (max-width: 600px) {
+    /* Estilos para dispositivos com largura menor que 600px (tipicamente celulares) */
+    h1, h2 {
+        font-size: 1.2rem; 
+    }
+
+    p, ul li {
+        font-size: 0.9rem;  
+    }
+
+    .guiazinhoImg {
+        width: 80%;  /* Alterado para 80% em telas menores */
+    }
+
+    .contentWrapper {
+      flex-direction: column; /* Os itens se alinham verticalmente em dispositivos móveis */
+    }
+}
+.logo-img {
+    width: 50%; /* Ajuste a largura conforme necessário */
+    max-width: 200px; /* Adicione um tamanho máximo */
+    display: block;
+    margin: 0 auto; /* Centraliza a imagem horizontalmente */
+}
+

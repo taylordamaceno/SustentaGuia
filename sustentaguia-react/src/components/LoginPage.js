@@ -54,7 +54,7 @@ function LoginPage() {
   return (
     <div className="App">
       <header>
-        <img src={logo} alt="Logotipo do aplicativo" />
+      <img src={logo} alt="Logotipo do aplicativo" className="logo-img" />
         <h1>Cadastro / Login</h1>
       </header>
       <div className="tabs">

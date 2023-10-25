@@ -7,7 +7,7 @@ function HomePage() {
   return (
     <div className="App">
       <header>
-        <img src={logo} alt="Logotipo do aplicativo" />
+      <img src={logo} alt="Logotipo do aplicativo" className="logo-img" />
         <h1>Aprenda sobre energia verde </h1>
         <a href="/login">Comece Agora</a>
       </header>

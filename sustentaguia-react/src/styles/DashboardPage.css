@@ -1,9 +1,8 @@
-/* DashboardPage.css */
-
 .App {
     font-family: 'Arial', sans-serif;
     text-align: center;
     padding: 20px;
+    max-width: 100%;
 }
 
 header {
@@ -30,12 +29,24 @@ h1, h2 {
     /* Adicione o estilo para os ícones dos módulos aqui */
 }
 
-/* No arquivo CSS associado ao DashboardPage, por exemplo DashboardPage.css */
-
 .dashboard-logo {
-    width: 20%;  /* Ajuste esse valor conforme necessário */
-    max-width: 300px;  /* Ajuste esse valor conforme necessário */
+    width: 80%;  
+    max-width: 300px;  
     display: block;
-    margin: 0 auto;  /* Centraliza a imagem horizontalmente */
+    margin: 0 auto;
 }
 
+@media (max-width: 600px) {
+    /* Estilos para dispositivos com largura menor que 600px (tipicamente celulares) */
+    .dashboard-logo {
+        width: 100%;  
+    }
+
+    h1, h2 {
+        font-size: 1.2rem; 
+    }
+    
+    .modules-list {
+        font-size: 0.9rem;  
+    }
+}
