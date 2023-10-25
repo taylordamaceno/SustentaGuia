@@ -20,3 +20,30 @@
     /* Estilize seu botão aqui, se necessário */
 }
 
+.tabs {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  
+  .tabs button {
+    padding: 10px 20px;
+    margin: 0 10px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  
+  .tabs button.active {
+    color: #009688;
+    border-bottom: 2px solid #009688;
+  }
+  .error-message {
+    color: red;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+
+

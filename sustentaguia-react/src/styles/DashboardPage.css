@@ -33,7 +33,7 @@ h1, h2 {
 /* No arquivo CSS associado ao DashboardPage, por exemplo DashboardPage.css */
 
 .dashboard-logo {
-    width: 15%;  /* Ajuste esse valor conforme necessário */
+    width: 20%;  /* Ajuste esse valor conforme necessário */
     max-width: 300px;  /* Ajuste esse valor conforme necessário */
     display: block;
     margin: 0 auto;  /* Centraliza a imagem horizontalmente */
