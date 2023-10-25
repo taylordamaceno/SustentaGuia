@@ -21,7 +21,7 @@ function LoginPage() {
   const handleRegister = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:5000/register', {
+      const response = await axios.post('http://192.168.0.8:5000/register', {
         name: formData.nome,
         email: formData.email,
         password: formData.senha
@@ -35,19 +35,26 @@ function LoginPage() {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:5000/login', {
+      const response = await axios.post('http://192.168.0.8:5000/login', {
         email: formData.email,
         password: formData.senha
       });
-      console.log(response.data);
-      localStorage.setItem('token', response.data.token);
-      window.location.href = '/dashboard';
+      
+      // Verifique se response e response.data estão definidos antes de tentar acessar response.data.token
+      if (response && response.data && response.data.token) {
+        console.log(response.data);
+        localStorage.setItem('token', response.data.token);
+        window.location.href = '/dashboard';
+      } else {
+        console.error("Erro ao logar: Response ou response.data está indefinido.");
+        setErrorMessage("Usuário ou senha inválidos");
+      }
     } catch (error) {
-      console.error("Erro ao logar:", error.response.data);
+      console.error("Erro ao logar:", error.response ? error.response.data : error);
       setErrorMessage("Usuário ou senha inválidos");
-
     }
   };
+  
 
   const [activeTab, setActiveTab] = useState('login');
 
