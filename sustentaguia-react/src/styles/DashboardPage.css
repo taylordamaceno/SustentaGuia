@@ -27,7 +27,7 @@ header {
 
 .DashboardPage h1, .DashboardPage h2, .DashboardPage p, .DashboardPage ul li {
     font-weight: bold;
-    color: green;
+    color: whitesmoke;
     text-align: center;
 }
 
