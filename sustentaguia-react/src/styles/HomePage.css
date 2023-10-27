@@ -5,17 +5,16 @@ body, html {
 }
 
 .App {
+    font-family: 'Arial', sans-serif;
     background-image: url('../assets/images/sustentaBackground.png');
     background-size: cover;
     background-repeat: no-repeat;
-    height: 100%;
-}
-
-.App {
-    font-family: 'Arial', sans-serif;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     text-align: center;
-    padding: 20px;
-    max-width: 100%;
 }
 
 header {
@@ -52,10 +51,6 @@ li {
     padding: 8px 0;
 }
 
-.App header, .App main, .App footer {
-    text-align: center;
-}
-
 .contentWrapper {
   display: flex;
   justify-content: space-between;
@@ -66,6 +61,23 @@ li {
   width: 50%;
   margin-left: 20px;
   max-width: 200px;
+}
+
+.logo-img {
+    width: 70%;
+    max-width: 300px;
+    display: block;
+    margin: 0 auto;
+}
+
+.boldList li {
+    font-weight: bold;
+    color: white;
+    text-align: center;
+}
+
+.App h2.greenText {
+    color: #009688;
 }
 
 @media (max-width: 600px) {
@@ -84,35 +96,8 @@ li {
     .contentWrapper {
       flex-direction: column;
     }
-}
 
-.logo-img {
-    width: 50%;
-    max-width: 200px;
-    display: block;
-    margin: 0 auto;
+    .logo-img {
+        width: 90%;
+    }
 }
-
-.App {
-    font-family: 'Arial', sans-serif;
-    background-image: url('../assets/images/sustentaBackground.png');
-    background-size: cover;
-    background-repeat: no-repeat;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-}
-
-.boldList li {
-    font-weight: bold;
-    color: white;
-    text-align: center;
-}
-
-.App h2.greenText {
-    color: #009688; /* A mesma cor verde usada no botão */
-}
-
