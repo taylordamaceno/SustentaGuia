@@ -21,7 +21,7 @@ function LoginPage() {
   const handleRegister = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://192.168.0.8:5000/register', {
+      const response = await axios.post('http://192.168.10.10:5000/register', {
         name: formData.nome,
         email: formData.email,
         password: formData.senha
@@ -35,7 +35,7 @@ function LoginPage() {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://192.168.0.8:5000/login', {
+      const response = await axios.post('http://192.168.10.10:5000/login', {
         email: formData.email,
         password: formData.senha
       });
@@ -59,7 +59,7 @@ function LoginPage() {
   const [activeTab, setActiveTab] = useState('login');
 
   return (
-    <div className="App">
+    <div className="LoginPage">
       <header>
       <img src={logo} alt="Logotipo do aplicativo" className="logo-img" />
         <h1>Cadastro / Login</h1>

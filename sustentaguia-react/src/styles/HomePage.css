@@ -1,3 +1,16 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+}
+
+.App {
+    background-image: url('../assets/images/sustentaBackground.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100%;
+}
+
 .App {
     font-family: 'Arial', sans-serif;
     text-align: center;
@@ -11,14 +24,10 @@ header {
     margin-bottom: 20px;
 }
 
-h1, h2 {
-    color: #333;
-    margin-bottom: 15px;
-}
-
-p {
-    margin-bottom: 20px;
-    text-align: justify;
+.App h1, .App h2, .App p, .App ul li {
+    font-weight: bold;
+    color: white;
+    text-align: center;
 }
 
 a {
@@ -43,23 +52,6 @@ li {
     padding: 8px 0;
 }
 
-h1, h2 {
-    font-weight: bold;
-    color: white;
-    text-align: center;
-}
-
-p {
-    color: white;
-    text-align: justify;
-    padding: 0 15px;
-}
-
-ul li {
-    color: white;
-    padding: 5px 0;
-}
-
 .App header, .App main, .App footer {
     text-align: center;
 }
@@ -71,33 +63,56 @@ ul li {
 }
 
 .guiazinhoImg {
-  width: 50%;  /* Alterado para 50% */
+  width: 50%;
   margin-left: 20px;
-  max-width: 200px; /* Adicionado um tamanho máximo */
+  max-width: 200px;
 }
 
 @media (max-width: 600px) {
-    /* Estilos para dispositivos com largura menor que 600px (tipicamente celulares) */
     h1, h2 {
-        font-size: 1.2rem; 
+        font-size: 1.2rem;
     }
 
     p, ul li {
-        font-size: 0.9rem;  
+        font-size: 0.9rem;
     }
 
     .guiazinhoImg {
-        width: 80%;  /* Alterado para 80% em telas menores */
+        width: 80%;
     }
 
     .contentWrapper {
-      flex-direction: column; /* Os itens se alinham verticalmente em dispositivos móveis */
+      flex-direction: column;
     }
 }
+
 .logo-img {
-    width: 50%; /* Ajuste a largura conforme necessário */
-    max-width: 200px; /* Adicione um tamanho máximo */
+    width: 50%;
+    max-width: 200px;
     display: block;
-    margin: 0 auto; /* Centraliza a imagem horizontalmente */
+    margin: 0 auto;
+}
+
+.App {
+    font-family: 'Arial', sans-serif;
+    background-image: url('../assets/images/sustentaBackground.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.boldList li {
+    font-weight: bold;
+    color: white;
+    text-align: center;
+}
+
+.App h2.greenText {
+    color: #009688; /* A mesma cor verde usada no botão */
 }
 
