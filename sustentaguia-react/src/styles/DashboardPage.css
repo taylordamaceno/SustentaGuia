@@ -1,8 +1,22 @@
-.App {
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+}
+
+.DashboardPage {
+    background-image: url('../assets/images/dashboardBackground.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100%;
     font-family: 'Arial', sans-serif;
     text-align: center;
     padding: 20px;
     max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 header {
@@ -11,42 +25,46 @@ header {
     margin-bottom: 20px;
 }
 
-h1, h2 {
-    color: #333;
-    margin-bottom: 15px;
+.DashboardPage h1, .DashboardPage h2, .DashboardPage p, .DashboardPage ul li {
+    font-weight: bold;
+    color: green;
+    text-align: center;
 }
 
 .modules-list {
     list-style-type: none;
-    padding: 0;
+    padding-left: 0;
 }
 
 .modules-list li {
-    margin-bottom: 15px;
+    padding: 8px 0;
 }
 
 .module-icon {
-    /* Adicione o estilo para os ícones dos módulos aqui */
+    /* You can expand on the icon styles here */
 }
 
 .dashboard-logo {
-    width: 80%;  
-    max-width: 300px;  
+    width: 50%;
+    max-width: 200px;
     display: block;
     margin: 0 auto;
 }
 
 @media (max-width: 600px) {
-    /* Estilos para dispositivos com largura menor que 600px (tipicamente celulares) */
-    .dashboard-logo {
-        width: 100%;  
+    h1, h2 {
+        font-size: 1.2rem;
     }
 
-    h1, h2 {
-        font-size: 1.2rem; 
+    p, ul li {
+        font-size: 0.9rem;
     }
-    
-    .modules-list {
-        font-size: 0.9rem;  
+
+    .dashboard-logo {
+        width: 80%;
     }
+}
+
+.DashboardPage footer {
+    text-align: center;
 }

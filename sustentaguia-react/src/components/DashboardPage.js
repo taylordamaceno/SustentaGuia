@@ -16,7 +16,7 @@ function DashboardPage() {  // Corrigindo o nome da função
   }, []);
 
   return (
-    <div className="App">
+    <div className="DashboardPage">
       <header>
         <img src={dashboard} alt="Descrição da Imagem" className="dashboard-logo" />
         <h1>Dashboard</h1>
