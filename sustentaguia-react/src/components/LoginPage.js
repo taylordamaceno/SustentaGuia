@@ -21,7 +21,7 @@ function LoginPage() {
   const handleRegister = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://192.168.10.10:5000/register', {
+      const response = await axios.post(`${process.env.REACT_APP_API_URL}/register`, {
         name: formData.nome,
         email: formData.email,
         password: formData.senha
@@ -35,7 +35,7 @@ function LoginPage() {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://192.168.10.10:5000/login', {
+      const response = await axios.post(`${process.env.REACT_APP_API_URL}/login`,{
         email: formData.email,
         password: formData.senha
       });
