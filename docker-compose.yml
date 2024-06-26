@@ -1,0 +1,33 @@
+version: '3.8'
+
+services:
+  db:
+    build:
+      context: ./sustentaguia_db
+      dockerfile: Dockerfile
+    environment:
+      POSTGRES_DB: sustentaguia
+      POSTGRES_USER: youruser
+      POSTGRES_PASSWORD: yourpassword
+    ports:
+      - "5432:5432"
+
+  backend:
+    build:
+      context: ./sustentaguia_backend
+      dockerfile: Dockerfile
+    environment:
+      DATABASE_URL: postgres://youruser:yourpassword@db:5432/sustentaguia
+    ports:
+      - "3001:3000"
+    depends_on:
+      - db
+
+  frontend:
+    build:
+      context: ./sustentaguia_frontend
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
