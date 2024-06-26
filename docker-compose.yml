@@ -22,6 +22,7 @@ services:
       - "3001:3000"
     depends_on:
       - db
+    entrypoint: ["sh", "-c", "sleep 10 && npm start"]
 
   frontend:
     build:
@@ -31,3 +32,4 @@ services:
       - "3000:3000"
     depends_on:
       - backend
+    entrypoint: ["sh", "-c", "sleep 20 && npm start"]
