@@ -2,7 +2,7 @@ const express = require('express');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const cors = require('cors');
-const db = require('./database');
+const db = require('./database');  // Certifique-se de que o caminho para o módulo do banco de dados está correto
 const modulesRoutes = require('./routes/modules');
 const userProgressRoutes = require('./routes/userProgress');
 

@@ -100,4 +100,13 @@ function LoginPage() {
                 <label htmlFor="senha">Senha</label>
                 <input type="password" className="form-control" id="senha" name="senha" placeholder="Sua senha" value={formData.senha} onChange={handleInputChange} />
               </div>
-              <button type="submit
+              <button type="submit" className="btn btn-primary">Enviar</button>
+            </form>
+          </section>
+        )}
+      </main>
+    </div>
+  );
+}
+
+export default LoginPage;
