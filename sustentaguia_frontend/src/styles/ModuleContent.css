@@ -1,0 +1,44 @@
+.module-page {
+  padding: 20px;
+  font-family: 'Arial', sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+  line-height: 1.6;
+}
+
+.module-page h1 {
+  font-size: 2em;
+  color: #2c3e50;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.module-page h2 {
+  font-size: 1.5em;
+  color: #16a085;
+  margin-top: 20px;
+}
+
+.module-page h3 {
+  font-size: 1.2em;
+  color: #27ae60;
+  margin-top: 15px;
+}
+
+.module-page p {
+  margin: 10px 0;
+}
+
+.module-page ul {
+  margin: 10px 0;
+  padding-left: 20px;
+}
+
+.module-page ul li {
+  margin: 5px 0;
+}
+
+.module-page strong {
+  color: #2980b9;
+}
+

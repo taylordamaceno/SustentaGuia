@@ -1,5 +1,6 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
+import '../styles/ModuleContent.css'; // Importando o arquivo CSS
 
 function ModuleContent() {
   const { id } = useParams();
@@ -8,7 +9,7 @@ function ModuleContent() {
     switch (moduleId) {
       case '1':
         return (
-          <div>
+          <div className="module-content">
             <h2>Introdução ao Módulo 1: Energia Verde</h2>
             <p>
               A energia verde refere-se à energia que é produzida de forma que tenha um impacto mínimo no meio ambiente. As fontes de energia verde são tipicamente renováveis e não poluentes, o que significa que elas ajudam a reduzir a pegada de carbono e a mitigar as mudanças climáticas. Exemplos incluem energia solar, eólica, hidroelétrica, geotérmica e biomassa.
@@ -87,7 +88,7 @@ function ModuleContent() {
   };
 
   return (
-    <div>
+    <div className="module-page">
       <h1>Conteúdo do Módulo {id}</h1>
       {getContent(id)}
     </div>
