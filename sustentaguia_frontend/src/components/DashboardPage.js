@@ -1,16 +1,14 @@
-// DashboardPage.js
-
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import dashboard from '../assets/images/dashboard.png';
 import '../styles/DashboardPage.css';
 
-function DashboardPage() {  // Corrigindo o nome da função
+function DashboardPage() {
   const [userProgress, setUserProgress] = useState({
     modulesCompleted: 0,
     quizzesPassed: 0
   });
 
-  // Você pode substituir esse useEffect por uma chamada à sua API para obter o progresso real do usuário.
   useEffect(() => {
     // Exemplo: setUserProgress({ modulesCompleted: 3, quizzesPassed: 2 });
   }, []);
@@ -25,11 +23,11 @@ function DashboardPage() {  // Corrigindo o nome da função
         <section>
           <h2>Módulos Introdutórios</h2>
           <ul className="modules-list">
-            <li><i className="module-icon"></i> Módulo 1: Introdução à Energia Verde</li>
-            <li><i className="module-icon"></i> Módulo 2: Energia Solar</li>
-            <li><i className="module-icon"></i> Módulo 3: Energia Eólica</li>
-            <li><i className="module-icon"></i> Módulo 4: Energia Hidroelétrica</li>
-            <li><i className="module-icon"></i> Módulo 5: Biomassa e Biogás</li>
+            <li><Link to="/module/1"><i className="module-icon"></i> Módulo 1: Introdução à Energia Verde</Link></li>
+            <li><Link to="/module/2"><i className="module-icon"></i> Módulo 2: Energia Solar</Link></li>
+            <li><Link to="/module/3"><i className="module-icon"></i> Módulo 3: Energia Eólica</Link></li>
+            <li><Link to="/module/4"><i className="module-icon"></i> Módulo 4: Energia Hidroelétrica</Link></li>
+            <li><Link to="/module/5"><i className="module-icon"></i> Módulo 5: Biomassa e Biogás</Link></li>
           </ul>
         </section>
         <section>
@@ -45,4 +43,4 @@ function DashboardPage() {  // Corrigindo o nome da função
   );
 }
 
-export default DashboardPage;  // Corrigindo o export para DashboardPage
+export default DashboardPage;

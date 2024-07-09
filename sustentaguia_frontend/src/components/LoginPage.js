@@ -40,15 +40,12 @@ function LoginPage() {
       });
 
       if (response && response.data && response.data.token) {
-        console.log(response.data);
         localStorage.setItem('token', response.data.token);
         window.location.href = '/dashboard';
       } else {
-        console.error("Erro ao logar: Response ou response.data está indefinido.");
         setErrorMessage("Usuário ou senha inválidos");
       }
     } catch (error) {
-      console.error("Erro ao logar:", error.response ? error.response.data : error.message);
       setErrorMessage("Usuário ou senha inválidos");
     }
   };
@@ -100,11 +97,14 @@ function LoginPage() {
                 <label htmlFor="senha">Senha</label>
                 <input type="password" className="form-control" id="senha" name="senha" placeholder="Sua senha" value={formData.senha} onChange={handleInputChange} />
               </div>
-              <button type="submit" className="btn btn-primary">Enviar</button>
+              <button type="submit" className="btn btn-primary">Entrar</button>
             </form>
           </section>
         )}
       </main>
+      <footer>
+        <p>Copyright © 2023</p>
+      </footer>
     </div>
   );
 }

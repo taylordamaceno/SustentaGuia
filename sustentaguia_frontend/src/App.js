@@ -1,21 +1,20 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import HomePage from './components/HomePage';
 import LoginPage from './components/LoginPage';
-import DashboardPage from './components/DashboardPage'; // Corrigindo o nome do import para DashboardPage
-import './styles/App.css';
+import DashboardPage from './components/DashboardPage';
+import ModuleContent from './components/ModuleContent';
 
 function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<HomePage />} />
         <Route path="/login" element={<LoginPage />} />
-        <Route path="/dashboard" element={<DashboardPage />} /> {/* Rota para o DashboardPage */}
+        <Route path="/dashboard" element={<DashboardPage />} />
+        <Route path="/module/:id" element={<ModuleContent />} />
+        <Route path="/" element={<LoginPage />} />
       </Routes>
     </Router>
   );
 }
 
 export default App;
-
