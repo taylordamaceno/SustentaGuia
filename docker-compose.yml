@@ -19,7 +19,7 @@ services:
     environment:
       DATABASE_URL: postgres://youruser:yourpassword@db:5432/sustentaguia
     ports:
-      - "3001:3000"
+      - "3001:3001" # Corrigido de "3000" para "3001"
     depends_on:
       - db
     entrypoint: ["sh", "-c", "sleep 10 && npm start"]

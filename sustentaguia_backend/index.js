@@ -7,17 +7,22 @@ const modulesRoutes = require('./routes/modules');
 const userProgressRoutes = require('./routes/userProgress');
 
 const app = express();
-const PORT = 5000;
+const PORT = 3001;
 const SECRET_KEY = "90b7f602d68080c1571d9370b8b8683210595d2bc05677fabedaa61c78fa2a7d";
 
-app.use(express.json());
-app.use(cors());
+// Configuração do CORS
+const corsOptions = {
+    origin: 'http://localhost:3000',
+    credentials: true,
+    optionsSuccessStatus: 200
+};
 
-// Use os roteadores de módulo e progresso do usuário:
+app.use(cors(corsOptions));
+app.use(express.json());
+
 app.use('/api/modules', modulesRoutes);
 app.use('/api/userProgress', userProgressRoutes);
 
-// Função de middleware para autenticar token JWT
 function authenticateToken(req, res, next) {
     const authHeader = req.headers['authorization'];
     const token = authHeader && authHeader.split(' ')[1];
