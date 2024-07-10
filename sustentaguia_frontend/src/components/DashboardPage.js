@@ -21,7 +21,7 @@ function DashboardPage() {
       </header>
       <main>
         <section>
-          <h2>Módulos Introdutórios</h2>
+          <h2>Módulos </h2>
           <ul className="modules-list">
             <li><Link to="/module/1"><i className="module-icon"></i> Módulo 1: Introdução à Energia Verde</Link></li>
             <li><Link to="/module/2"><i className="module-icon"></i> Módulo 2: Energia Solar</Link></li>
@@ -32,12 +32,11 @@ function DashboardPage() {
         </section>
         <section>
           <h2>Progresso</h2>
-          <p>Módulos concluídos: {userProgress.modulesCompleted} de 5</p>
-          <p>Quizzes passados: {userProgress.quizzesPassed} de 5</p>
-        </section>
+          <p>Módulos concluídos você terá uma visão inicial de como funciona energia renovavel e seus impactos</p>
+          </section>
       </main>
       <footer>
-        <p>Copyright © 2023</p>
+        <p>Copyright © 2024</p>
       </footer>
     </div>
   );

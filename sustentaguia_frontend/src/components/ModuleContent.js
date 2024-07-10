@@ -1,10 +1,13 @@
 import React from 'react';
-import { useParams } from 'react-router-dom';
-import '../styles/ModuleContent.css'; // Importando o arquivo CSS
+import { useParams, useNavigate } from 'react-router-dom'; 
+import '../styles/ModuleContent.css'; 
 
 function ModuleContent() {
   const { id } = useParams();
-
+  const navigate = useNavigate();
+  const goBack = () => {
+    navigate('/dashboard'); 
+  };
   const getContent = (moduleId) => {
     switch (moduleId) {
       case '1':
@@ -78,21 +81,135 @@ function ModuleContent() {
             </p>
           </div>
         );
-      case '2':
-        return "Insira o conteúdo do Módulo 2 aqui.";
-      case '3':
-        return "Insira o conteúdo do Módulo 3 aqui.";
-      default:
-        return "Conteúdo não encontrado.";
+        case '2':
+          return (
+            <div className="module-content">
+              <h2>Introdução ao Módulo 2: Energia Solar</h2>
+              <p>
+                A energia solar é uma das formas mais promissoras e sustentáveis de energia renovável disponível hoje. Utilizando o sol, uma fonte de energia limpa e inesgotável, a energia solar transforma a luz solar em eletricidade.
+              </p>
+              <h3>Como Funciona a Energia Solar?</h3>
+              <p>
+                Quando a luz solar atinge um painel solar, os fótons (partículas de luz) são absorvidos pelas células solares. Este processo cria um campo elétrico através das camadas do semicondutor, geralmente feito de silício, gerando corrente elétrica.
+              </p>
+              <h3>Benefícios da Energia Solar</h3>
+              <ul>
+                <li>Sustentabilidade Ambiental: A energia solar é limpa e renovável, reduzindo a dependência de combustíveis fósseis.</li>
+                <li>Redução de Custos de Energia: Após o investimento inicial, os custos operacionais são extremamente baixos.</li>
+                <li>Acessibilidade: O custo dos painéis solares tem diminuído, tornando-os mais acessíveis para mais pessoas.</li>
+                <li>Flexibilidade de Instalação: Os sistemas podem ser instalados em quase qualquer lugar e dimensionados conforme necessário.</li>
+              </ul>
+              <h3>Desafios da Energia Solar</h3>
+              <ul>
+                <li>Intermitência: A energia solar depende da luz do sol, que é intermitente e variável.</li>
+                <li>Custo Inicial Alto: O custo inicial para a instalação de painéis solares pode ser significativo.</li>
+                <li>Espaço para Instalação: Grandes quantidades de espaço são necessárias para instalações em grande escala.</li>
+              </ul>
+              <h3>Conclusão</h3>
+              <p>
+                Investir em energia solar promove a sustentabilidade ambiental e oferece benefícios econômicos a longo prazo, tornando-se uma parte cada vez mais importante do mix de energia global.
+              </p>
+            </div>
+          );        
+          case '3':
+            return (
+              <div className="module-content">
+                <h2>Introdução ao Módulo 3: Energia Eólica</h2>
+                <p>
+                  A energia eólica é gerada pelo movimento do ar na atmosfera, transformado em energia elétrica por meio de turbinas eólicas. Este método limpo e renovável está entre os mais eficientes e sustentáveis métodos de produção de energia.
+                </p>
+                <h3>Como Funciona a Energia Eólica?</h3>
+                <p>
+                  Turbinas eólicas captam a energia cinética do vento através de suas grandes pás giratórias. Quando o vento sopra, as pás giram, girando um rotor conectado a um gerador que produz eletricidade. Essas turbinas são instaladas em locais com ventos consistentes, como colinas, planícies abertas e áreas costeiras, assim como em plataformas offshore.
+                </p>
+                <h3>Benefícios da Energia Eólica</h3>
+                <ul>
+                  <li>Sustentável: Não emite gases poluentes ou gera resíduos.</li>
+                  <li>Renovável: Utiliza o vento, uma fonte inesgotável de energia.</li>
+                  <li>Econômica: Reduz a dependência de combustíveis fósseis e pode diminuir os custos de energia a longo prazo.</li>
+                  <li>Escalável: Pode ser adaptada para uso desde pequenas comunidades até grandes parques eólicos industriais.</li>
+                </ul>
+                <h3>Desafios da Energia Eólica</h3>
+                <ul>
+                  <li>Intermitência: A produção de energia pode ser inconsistente, dependendo das variações de velocidade e direção do vento.</li>
+                  <li>Impacto Visual e Sonoro: As turbinas podem ser vistas como poluição visual e também produzem ruído, o que pode ser um problema para comunidades próximas.</li>
+                  <li>Impacto na Vida Selvagem: Há preocupações sobre o impacto das turbinas eólicas na vida selvagem, especialmente aves e morcegos.</li>
+                </ul>
+                <h3>Conclusão</h3>
+                <p>
+                  A energia eólica é uma solução energética promissora que alia eficiência com sustentabilidade, oferecendo uma alternativa crucial para o futuro da produção de energia global.
+                </p>
+              </div>
+            );
+          case '4':
+            return (
+              <div className="module-content">
+                <h2>Introdução ao Módulo 4: Energia Hidroelétrica</h2>
+                <p>
+                  A energia hidroelétrica é uma das formas mais antigas e importantes de energia renovável. Ela é gerada pela conversão da energia potencial da água armazenada em eletricidade através de turbinas hidráulicas.
+                </p>
+                <h3>Como Funciona a Energia Hidroelétrica?</h3>
+                <p>
+                  A energia hidroelétrica é produzida usando a água armazenada em represas. A água liberada das represas flui através de turbinas, girando-as e ativando um gerador para produzir eletricidade. A energia gerada é proporcional ao volume e à queda de água.
+                </p>
+                <h3>Benefícios da Energia Hidroelétrica</h3>
+                <ul>
+                  <li>Consistente: Fornece uma fonte de energia mais constante comparada a outras formas renováveis.</li>
+                  <li>Baixo Custo de Operação: Após a construção da represa, os custos de operação e manutenção são relativamente baixos.</li>
+                  <li>Armazenamento de Energia: Represas podem armazenar água que pode ser usada para gerar energia conforme necessário.</li>
+                </ul>
+                <h3>Desafios da Energia Hidroelétrica</h3>
+                <ul>
+                  <li>Impacto Ambiental: A construção de grandes represas pode ter impactos significativos nos ecossistemas locais e deslocar comunidades.</li>
+                  <li>Alto Custo Inicial: A construção de infraestrutura de represas é cara e demorada.</li>
+                  <li>Secas: A eficácia da energia hidroelétrica pode ser afetada em períodos de seca, quando o volume de água disponível é reduzido.</li>
+                </ul>
+                <h3>Conclusão</h3>
+                <p>
+                  A energia hidroelétrica desempenha um papel crucial na matriz energética mundial, oferecendo uma fonte renovável e confiável que ajuda a estabilizar e diversificar o fornecimento de energia.
+                </p>
+              </div>
+            );
+          case '5':
+            return (
+              <div className="module-content">
+                <h2>Introdução ao Módulo 5: Biomassa e Biogás</h2>
+                <p>
+                  Biomassa e biogás referem-se à utilização de materiais orgânicos como fonte de energia. Esses métodos transformam resíduos agrícolas, resíduos florestais e dejetos animais em formas úteis de energia, como calor e eletricidade.
+                </p>
+                <h3>Como Funciona Biomassa e Biogás?</h3>
+                <p>
+                  A biomassa utiliza materiais orgânicos diretamente como combustível, ou os converte em um líquido ou gás combustível. O biogás é produzido pela fermentação de materiais orgânicos em um ambiente anaeróbico, liberando metano, que pode ser queimado para gerar energia.
+                </p>
+                <h3>Benefícios de Biomassa e Biogás</h3>
+                <ul>
+                  <li>Redução de Resíduos: Ajuda a reduzir o volume de resíduos em aterros.</li>
+                  <li>Emissões Reduzidas: Comparado com os combustíveis fósseis, possui uma pegada de carbono mais baixa.</li>
+                  <li>Energia Renovável: Fornece uma alternativa renovável e pode ser produzida localmente.</li>
+                </ul>
+                <h3>Desafios de Biomassa e Biogás</h3>
+                <ul>
+                  <li>Custo de Implementação: Tecnologias para processamento e conversão podem ser caras.</li>
+                  <li>Disponibilidade de Materiais: Dependente da disponibilidade local de recursos orgânicos.</li>
+                  <li>Competição de Uso da Terra: O uso de terra para cultivo de biomassa pode competir com a agricultura alimentar.</li>
+                </ul>
+                <h3>Conclusão</h3>
+                <p>
+                  A utilização de biomassa e biogás oferece uma abordagem prática para reduzir a dependência de combustíveis fósseis, aproveitando recursos renováveis para uma produção energética mais limpa e sustentável.
+                </p>
+              </div>
+            );
+          default:
+            return "Conteúdo não encontrado.";
+        }
+      };
+    
+      return (
+        <div className="module-page">
+          <h1>Conteúdo do Módulo {id}</h1>
+          {getContent(id)}
+          <button onClick={goBack} className="back-button">Voltar</button>  
+          </div>
+      );
     }
-  };
-
-  return (
-    <div className="module-page">
-      <h1>Conteúdo do Módulo {id}</h1>
-      {getContent(id)}
-    </div>
-  );
-}
-
-export default ModuleContent;
+    export default ModuleContent;
