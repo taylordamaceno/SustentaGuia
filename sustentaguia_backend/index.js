@@ -2,9 +2,10 @@ const express = require('express');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const cors = require('cors');
-const db = require('./database');  // Certifique-se de que o caminho para o módulo do banco de dados está correto
+const db = require('./database');
 const modulesRoutes = require('./routes/modules');
 const userProgressRoutes = require('./routes/userProgress');
+const { getDicas } = require('./models/dicas'); // Importa o modelo de dicas
 
 const app = express();
 const PORT = 3001;
@@ -22,6 +23,17 @@ app.use(express.json());
 
 app.use('/api/modules', modulesRoutes);
 app.use('/api/userProgress', userProgressRoutes);
+
+// Adiciona a rota direta para /api/dicas
+app.get('/api/dicas', async (req, res) => {
+    try {
+        const dicas = await getDicas(); // Busca as dicas do banco de dados
+        res.json(dicas); // Retorna as dicas como JSON
+    } catch (error) {
+        console.error('Erro ao buscar dicas:', error);
+        res.status(500).send({ error: error.message });
+    }
+});
 
 function authenticateToken(req, res, next) {
     const authHeader = req.headers['authorization'];

@@ -68,3 +68,31 @@ header {
 .DashboardPage footer {
     text-align: center;
 }
+/* Estilos para a Página de Dicas */
+.dicas-list {
+    list-style: none;
+    padding: 0;
+    margin: 20px auto;
+    max-width: 600px;
+}
+
+.dica-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    background-color: #ffffff; /* Fundo branco */
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra leve */
+    font-size: 1.1rem;
+    color: #333;
+}
+
+.dica-icon {
+    margin-right: 10px;
+    width: 20px;
+    height: 20px;
+    background-color: #4caf50; /* Verde */
+    border-radius: 50%;
+}
+

@@ -32,8 +32,14 @@ function DashboardPage() {
         </section>
         <section>
           <h2>Progresso</h2>
-          <p>Módulos concluídos você terá uma visão inicial de como funciona energia renovavel e seus impactos</p>
-          </section>
+          <p>Módulos concluídos você terá uma visão inicial de como funciona energia renovável e seus impactos</p>
+        </section>
+        <section>
+          <h2>Dicas Ambientais</h2>
+          <ul className="tips-list">
+            <li><Link to="/dicas"><i className="tips-icon"></i> Veja Dicas Ambientais</Link></li>
+          </ul>
+        </section>
       </main>
       <footer>
         <p>Copyright © 2024</p>
