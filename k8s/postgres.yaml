@@ -1,0 +1,108 @@
+apiVersion: v1
+kind: Secret
+metadata:
+  name: postgres-secret
+  namespace: default
+  labels:
+    app: postgres
+stringData:
+  postgres-user: youruser
+  postgres-password: yourpassword
+  postgres-database-url: postgres://youruser:yourpassword@postgres:5432/sustentaguia
+---
+
+# PersistentVolume and PersistentVolumeClaim for PostgreSQL
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: postgres-pv
+spec:
+  capacity:
+    storage: 1Gi
+  accessModes:
+    - ReadWriteOnce
+  hostPath:
+    path: /data/postgres
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: postgres-pvc
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 1Gi
+---
+
+# PostgreSQL Deployment
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: postgres
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: postgres
+  template:
+    metadata:
+      labels:
+        app: postgres
+    spec:
+      containers:
+      - name: postgres
+        image: postgres:13
+        env:
+        - name: POSTGRES_DB
+          value: sustentaguia
+        - name: POSTGRES_USER
+          valueFrom:
+            secretKeyRef:
+              name: postgres-secret
+              key: postgres-user
+        - name: POSTGRES_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: postgres-secret
+              key: postgres-password
+        ports:
+        - containerPort: 5432
+        volumeMounts:
+        - mountPath: /var/lib/postgresql/data
+          name: postgres-storage
+        - mountPath: /docker-entrypoint-initdb.d
+          name: init-script-volume
+      volumes:
+      - name: postgres-storage
+        persistentVolumeClaim:
+          claimName: postgres-pvc
+      - name: init-script-volume
+        configMap:
+          name: init-script-config
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: init-script-config
+  namespace: default
+  labels:
+    app: postgres
+data:
+  init.sql: |
+    -- Seu script de inicialização do banco de dados
+    CREATE TABLE example (id SERIAL PRIMARY KEY, name VARCHAR(50));
+---
+
+# Service for PostgreSQL
+apiVersion: v1
+kind: Service
+metadata:
+  name: postgres
+spec:
+  ports:
+  - port: 5432
+  selector:
+    app: postgres
+---
