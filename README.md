@@ -1,9 +1,13 @@
+Com docker Básico
+
 git clone git@github.com:taylordamaceno/SustentaGuia.git
 
 cd SustentaGuia
 
 docker-compose up --build
 ----------
+Com K8S usando kind
+
 Pré-requisitos
 
 Certifique-se de que você tem:
