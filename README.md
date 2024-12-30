@@ -1,3 +1,23 @@
+"SustentaGuia: Simplificando o Acesso a Soluções Sustentáveis"
+
+O SustentaGuia é uma plataforma voltada para quem busca informações claras e objetivas sobre energia renovável e práticas sustentáveis no dia a dia. Por meio de um frontend intuitivo e um backend robusto, o app oferece recursos para explorar dicas, artigos e serviços que incentivam um estilo de vida mais consciente e amigável ao meio ambiente.
+
+Destaques:
+Conteúdo Didático: O SustentaGuia centraliza informações sobre energia solar, eólica e outras tecnologias limpas, em linguagem simples e acessível.
+Organização de Serviços: Descubra empresas, profissionais e projetos que atuam na área de sustentabilidade.
+Aprendizado Contínuo: Desenvolvido para estudos e melhorias constantes, o SustentaGuia é um ambiente aberto a atualizações e novas funcionalidades relacionadas à preservação ambiental.
+Leve, educativo e engajado: esse é o propósito do SustentaGuia. Ele não só apresenta dados técnicos, mas também inspira a adoção de hábitos mais verdes, mostrando que pequenas mudanças fazem grande diferença para o planeta.
+
+Seja você um entusiasta de tecnologias limpas ou apenas alguém interessado em aprender mais sobre energia verde, o SustentaGuia torna a jornada sustentável mais simples e ao alcance de todos.
+
+
+
+
+
+
+
+Subindo localmente:
+
 Com docker Básico
 
 git clone git@github.com:taylordamaceno/SustentaGuia.git
