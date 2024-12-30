@@ -53,7 +53,6 @@ Passo 6: Configurar o Acesso
 Adicione a entrada abaixo no arquivo /etc/hosts para acessar a aplicação via Ingress:
 
 
-
 127.0.0.1 sustentaguia.local
 
 Abra no navegador:
