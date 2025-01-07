@@ -1,8 +1,7 @@
--- restore_db.sql
 BEGIN;
 
 -- Tabela de usuários
-CREATE TABLE users (
+CREATE TABLE IF NOT EXISTS users (
     id SERIAL PRIMARY KEY,
     name VARCHAR(255) NOT NULL,
     email VARCHAR(255) UNIQUE NOT NULL,
@@ -12,7 +11,7 @@ CREATE TABLE users (
 );
 
 -- Tabela de módulos
-CREATE TABLE modules (
+CREATE TABLE IF NOT EXISTS modules (
     id SERIAL PRIMARY KEY,
     title VARCHAR(255) NOT NULL,
     description TEXT,
@@ -21,7 +20,7 @@ CREATE TABLE modules (
 );
 
 -- Tabela de progresso do usuário
-CREATE TABLE user_progress (
+CREATE TABLE IF NOT EXISTS user_progress (
     id SERIAL PRIMARY KEY,
     user_id INTEGER REFERENCES users(id),
     module_id INTEGER REFERENCES modules(id),
@@ -31,31 +30,30 @@ CREATE TABLE user_progress (
 );
 
 -- Tabela de dicas
-CREATE TABLE dicas (
+CREATE TABLE IF NOT EXISTS dicas (
     id SERIAL PRIMARY KEY,
     dica TEXT NOT NULL
 );
 
--- Inserção de 20 dicas
+-- Inserção de 20 dicas, evitando duplicação
 INSERT INTO dicas (dica) VALUES
-('Desligue aparelhos da tomada quando não estiverem em uso.'),
-('Use transporte público ou carona compartilhada.'),
-('Opte por produtos com menos embalagens.'),
-('Evite imprimir documentos desnecessários.'),
-('Plante árvores ou cuide de um jardim.'),
-('Compre alimentos orgânicos de produtores locais.'),
-('Reduza o consumo de carne e opte por refeições vegetarianas.'),
-('Leve sua própria sacola ao mercado.'),
-('Reutilize garrafas de água e evite plásticos descartáveis.'),
-('Doe roupas e objetos que não utiliza mais.'),
-('Troque lâmpadas incandescentes por LED.'),
-('Evite comprar fast fashion; opte por roupas de qualidade.'),
-('Use aplicativos para economizar água e energia.'),
-('Recicle lixo eletrônico adequadamente.'),
-('Crie uma composteira para resíduos orgânicos.'),
-('Prefira bicicletas para pequenos trajetos.'),
-('Apoie iniciativas de preservação ambiental.')
+    ('Desligue aparelhos da tomada quando não estiverem em uso.'),
+    ('Use transporte público ou carona compartilhada.'),
+    ('Opte por produtos com menos embalagens.'),
+    ('Evite imprimir documentos desnecessários.'),
+    ('Plante árvores ou cuide de um jardim.'),
+    ('Compre alimentos orgânicos de produtores locais.'),
+    ('Reduza o consumo de carne e opte por refeições vegetarianas.'),
+    ('Leve sua própria sacola ao mercado.'),
+    ('Reutilize garrafas de água e evite plásticos descartáveis.'),
+    ('Doe roupas e objetos que não utiliza mais.'),
+    ('Troque lâmpadas incandescentes por LED.'),
+    ('Evite comprar fast fashion; opte por roupas de qualidade.'),
+    ('Use aplicativos para economizar água e energia.'),
+    ('Recicle lixo eletrônico adequadamente.'),
+    ('Crie uma composteira para resíduos orgânicos.'),
+    ('Prefira bicicletas para pequenos trajetos.'),
+    ('Apoie iniciativas de preservação ambiental.')
 ON CONFLICT DO NOTHING;
 
 COMMIT;
-

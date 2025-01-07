@@ -96,3 +96,62 @@ header {
     border-radius: 50%;
 }
 
+/* Estilo para o botão de logout */
+.logout-button {
+    background-color: #f44336; /* Vermelho */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+    margin: 10px 0;
+    float: right;
+}
+
+.logout-button:hover {
+    background-color: #d32f2f; /* Vermelho mais escuro */
+}
+
+/* Ajustes gerais do layout do Dashboard */
+.DashboardPage {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    padding: 10px;
+}
+
+.dashboard-logo {
+    width: 100px;
+    display: block;
+    margin: 0 auto;
+}
+
+header {
+    text-align: center;
+    position: relative;
+}
+
+header h1 {
+    margin-top: 10px;
+    font-size: 24px;
+    color: #333;
+}
+
+.modules-list, .tips-list {
+    list-style: none;
+    padding: 0;
+}
+
+.modules-list li, .tips-list li {
+    margin: 10px 0;
+}
+
+.module-icon, .tips-icon {
+    margin-right: 10px;
+}
+
+footer {
+    text-align: center;
+    margin-top: 20px;
+    color: #777;
+}
