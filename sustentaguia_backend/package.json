@@ -5,18 +5,22 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "dev": "nodemon index.js"
+    "dev": "nodemon index.js",
+    "lint": "eslint . --ext .js",
+    "test": "jest"
   },
   "dependencies": {
-    "bcrypt": "^5.0.1",
+    "bcrypt": "^5.1.0",                // Atualizado
     "cors": "^2.8.5",
     "dotenv": "^16.0.3",
-    "express": "^4.17.1",
-    "jsonwebtoken": "^8.5.1",
-    "pg": "^8.5.1"
+    "express": "^4.18.2",              // Atualizado
+    "jsonwebtoken": "^9.0.0",         // Atualizado
+    "pg": "^8.11.0"                   // Atualizado
   },
   "devDependencies": {
-    "nodemon": "^2.0.20"
+    "nodemon": "^2.0.22",             // Atualizado
+    "eslint": "^8.49.0",              // Adicionado para linting
+    "jest": "^29.7.0"                 // Adicionado para testes
   },
   "engines": {
     "node": ">=16.0.0"
