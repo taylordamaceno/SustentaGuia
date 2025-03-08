@@ -1,64 +1,61 @@
-"SustentaGuia: Simplificando o Acesso a Soluções Sustentáveis"
+SustentaGuia: Facilitating Access to Green Energy Information
 
-O SustentaGuia é uma plataforma voltada para quem busca informações claras e objetivas sobre energia renovável e práticas sustentáveis no dia a dia. Por meio de um frontend intuitivo e um backend robusto, o app oferece recursos para explorar dicas, artigos e serviços que incentivam um estilo de vida mais consciente e amigável ao meio ambiente.
+SustentaGuia is a lightweight and practical platform designed to share essential knowledge about renewable energy and sustainability. The goal is to make information accessible in a clear and intuitive way, providing insights into solar, wind, and other clean technologies.
 
-Destaques:
-Conteúdo Didático: O SustentaGuia centraliza informações sobre energia solar, eólica e outras tecnologias limpas, em linguagem simples e acessível.
-Organização de Serviços: Descubra empresas, profissionais e projetos que atuam na área de sustentabilidade.
-Aprendizado Contínuo: Desenvolvido para estudos e melhorias constantes, o SustentaGuia é um ambiente aberto a atualizações e novas funcionalidades relacionadas à preservação ambiental.
-Leve, educativo e engajado: esse é o propósito do SustentaGuia. Ele não só apresenta dados técnicos, mas também inspira a adoção de hábitos mais verdes, mostrando que pequenas mudanças fazem grande diferença para o planeta.
+What SustentaGuia Offers
 
-Seja você um entusiasta de tecnologias limpas ou apenas alguém interessado em aprender mais sobre energia verde, o SustentaGuia torna a jornada sustentável mais simples e ao alcance de todos.
+Concise and Informative Content: Five key sections with well-structured information about renewable energy and sustainability.
 
+Straightforward User Experience: A simple yet functional frontend built with React, styled with HTML and CSS, and featuring carefully selected visual elements.
 
+Secure Authentication: A basic login system connected to a PostgreSQL database, ensuring controlled access to certain features.
 
-
+API-Driven Interactions: The app communicates with a Node.js backend to fetch relevant data dynamically.
 
 
+While the project maintains a clean and minimalistic approach, it serves as a solid foundation for future enhancements, supporting users interested in adopting more sustainable practices.
 
-Subindo localmente:
 
-Com docker Básico
+---
+
+Running Locally
+
+With Docker
+
+To quickly run the project using Docker:
 
 git clone git@github.com:taylordamaceno/SustentaGuia.git
-
 cd SustentaGuia
-
 docker-compose up --build
-----------
-Com K8S usando kind
 
-Pré-requisitos
+Running on Kubernetes with Kind
 
-Certifique-se de que você tem:
+Prerequisites
 
-Docker instalado e funcionando.
+Ensure you have the following installed:
 
-Kubectl configurado e conectado a um cluster Kubernetes ativo (por exemplo, Kind).
+Docker (running properly)
 
-Git para clonar o repositório.
+Kubectl (configured and connected to a cluster like Kind)
 
+Git (to clone the repository)
 
 
 git clone https://github.com/taylordamaceno/SustentaGuia.git
-
 cd SustentaGuia/k8s
 
-Passo 2: Build das Imagens Docker
-
-Construa as imagens do backend e frontend:
+Building and Loading Docker Images
 
 sudo docker build -t sustentaguia-backend:latest ../sustentaguia_backend --load
 sudo docker build -t sustentaguia-frontend:latest ../sustentaguia_frontend --load
 
-Carregue as imagens no cluster Kubernetes: (exemplo aqui usando kind)
+Load the images into the Kubernetes cluster:
 
-sudo kind load docker-image sustentaguia-backend:latest --name NomeCluster
-sudo kind load docker-image sustentaguia-frontend:latest --name NomeCluster
+sudo kind load docker-image sustentaguia-backend:latest --name YourClusterName
+sudo kind load docker-image sustentaguia-frontend:latest --name YourClusterName
 
+Deploying the Application (PostgreSQL, Backend, and Frontend)
 
-
-Passo 3: Subir o PostgreSQL, backend e frontend
 sudo kubectl apply -f postgres.yaml
 sudo kubectl wait --for=condition=ready pod -l app=postgres --timeout=120s
 
@@ -68,13 +65,17 @@ sudo kubectl wait --for=condition=ready pod -l app=backend --timeout=120s
 sudo kubectl apply -f frontend.yaml
 sudo kubectl wait --for=condition=ready pod -l app=frontend --timeout=120s
 
+Accessing the Application
 
-Passo 6: Configurar o Acesso
-Adicione a entrada abaixo no arquivo /etc/hosts para acessar a aplicação via Ingress:
-
+Modify your /etc/hosts file by adding:
 
 127.0.0.1 sustentaguia.local
 
-Abra no navegador:
+Then, access the platform via:
 http://sustentaguia.local
+
+
+---
+
+SustentaGuia is a simple but meaningful initiative aimed at demystifying sustainability through easy-to-understand content and a user-friendly experience. It’s designed to be lightweight, accessible, and continuously evolving, making green energy knowledge more approachable for everyone.
 
