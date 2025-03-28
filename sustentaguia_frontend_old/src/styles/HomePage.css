@@ -1,0 +1,103 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+}
+
+.App {
+    font-family: 'Arial', sans-serif;
+    background-image: url('../assets/images/sustentaBackground.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+header {
+    background-color: #f4f4f4;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.App h1, .App h2, .App p, .App ul li {
+    font-weight: bold;
+    color: white;
+    text-align: center;
+}
+
+a {
+    background-color: #009688;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+a:hover {
+    background-color: #007766;
+}
+
+ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+li {
+    padding: 8px 0;
+}
+
+.contentWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.guiazinhoImg {
+  width: 50%;
+  margin-left: 20px;
+  max-width: 200px;
+}
+
+.logo-img {
+    width: 70%;
+    max-width: 300px;
+    display: block;
+    margin: 0 auto;
+}
+
+.boldList li {
+    font-weight: bold;
+    color: white;
+    text-align: center;
+}
+
+.App h2.greenText {
+    color: #009688;
+}
+
+@media (max-width: 600px) {
+    h1, h2 {
+        font-size: 1.2rem;
+    }
+
+    p, ul li {
+        font-size: 0.9rem;
+    }
+
+    .guiazinhoImg {
+        width: 80%;
+    }
+
+    .contentWrapper {
+      flex-direction: column;
+    }
+
+    .logo-img {
+        width: 90%;
+    }
+}

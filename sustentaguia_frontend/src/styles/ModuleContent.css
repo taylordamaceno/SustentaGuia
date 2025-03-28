@@ -1,35 +1,124 @@
 .module-page {
-  padding: 20px;
-  font-family: 'Open Sans', sans-serif; /* Usando Open Sans */
-  background-color: #b2f2bb; /* Fundo verde claro */
+  padding: 2rem;
+  font-family: "Inter", "Segoe UI", Roboto, sans-serif;
+  background-color: #f0f7f4;
   color: #333;
   line-height: 1.6;
+  max-width: 1000px;
+  margin: 0 auto;
+  min-height: 100vh;
   text-align: center; /* Centraliza todo o texto na página */
 }
 
-.module-page h1, .module-page h2, .module-page h3 {
-  font-weight: bold; /* Títulos em negrito */
+.module-page h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #009688;
+  text-align: center;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid #e0e0e0;
 }
 
-.module-page p, .module-page ul, .module-page ul li {
-  margin: 10px 0;
-  padding: 0; /* Remove padding para garantir alinhamento correto */
+.module-page h2 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #00796b;
+  margin: 2rem 0 1rem;
+}
+
+.module-page h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #00695c;
+  margin: 1.5rem 0 1rem;
+}
+
+.module-page p {
+  margin: 1rem 0;
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #37474f;
 }
 
 .module-page ul {
+  margin: 1rem 0;
+  padding-left: 1.5rem;
+  list-style-type: disc;
   list-style-position: inside; /* Posiciona a marcação de lista dentro do elemento para manter o alinhamento centralizado */
 }
+
+.module-page ul li {
+  margin-bottom: 0.75rem;
+  line-height: 1.6;
+}
+
+.module-page strong {
+  color: #00695c;
+  font-weight: 600;
+}
+
+.module-content {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  padding: 2rem;
+  margin-bottom: 2rem;
+}
+
 .back-button {
-  padding: 10px 20px;
-  background-color: #4CAF50;  /* Cor de fundo do botão */
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background-color: #009688;
   color: white;
-  font-size: 16px;
+  font-size: 1rem;
+  font-weight: 600;
   border: none;
-  border-radius: 5px;
+  border-radius: 4px;
   cursor: pointer;
-  margin-top: 20px;
+  margin: 1.5rem 0;
+  transition: background-color 0.3s, transform 0.2s;
 }
 
 .back-button:hover {
-  background-color: #367c39;  /* Cor ao passar o mouse */
+  background-color: #00796b;
+  transform: translateY(-2px);
 }
+
+@media (max-width: 768px) {
+  .module-page {
+    padding: 1.5rem;
+  }
+
+  .module-content {
+    padding: 1.5rem;
+  }
+
+  .module-page h1 {
+    font-size: 1.75rem;
+  }
+
+  .module-page h2 {
+    font-size: 1.5rem;
+  }
+
+  .module-page h3 {
+    font-size: 1.15rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .module-page {
+    padding: 1rem;
+  }
+
+  .module-content {
+    padding: 1rem;
+  }
+
+  .back-button {
+    width: 100%;
+    text-align: center;
+  }
+}
+

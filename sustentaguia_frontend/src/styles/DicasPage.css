@@ -1,71 +1,125 @@
-/* Estilo do botão "Voltar" */
-.btn-voltar {
-  text-decoration: none;
-  background-color: #2ecc71;
-  color: white;
-  padding: 12px 20px;
-  border-radius: 6px;
-  font-weight: bold;
-  font-size: 16px;
-  border: none;
-  cursor: pointer;
-  transition: background-color 0.3s;
-  display: block;
-  margin: 20px auto; /* Centraliza horizontalmente e afasta da parte inferior */
-  width: fit-content; /* Tamanho baseado no texto */
-}
-
-.btn-voltar:hover {
-  background-color: #27ae60;
-}
-
 /* Container principal */
 .dicas-page-container {
-  padding: 20px;
-  background-color: #f9f9f9;
+  padding: 2rem;
+  background-color: #f0f7f4;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: space-between; /* Para posicionar elementos principais */
-  font-family: Arial, sans-serif;
+  font-family: "Inter", "Segoe UI", Roboto, sans-serif;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 /* Estilo do título */
+.dicas-page-header {
+  margin-bottom: 2rem;
+  position: relative;
+}
+
 .dicas-page-header h1 {
   text-align: center;
-  font-size: 28px;
-  font-weight: bold;
-  margin: 0 auto 20px;
-  color: #2c3e50;
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 1.5rem 0;
+  color: #009688;
+}
+
+/* Estilo do botão "Voltar" */
+.btn-voltar {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  background-color: #009688;
+  color: white;
+  padding: 0.75rem 1.25rem;
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.btn-voltar:hover {
+  background-color: #00796b;
+  transform: translateY(-2px);
 }
 
 /* Grid de cartões */
 .dicas-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 20px;
-  padding: 10px;
+  gap: 1.5rem;
+  padding: 0.5rem;
 }
 
 /* Estilo dos cartões */
 .dica-card {
-  background-color: #ffffff;
+  background-color: white;
   border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  padding: 16px;
-  text-align: center;
-  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+  padding: 1.5rem;
+  text-align: left;
+  transition: transform 0.3s, box-shadow 0.3s;
+  border-left: 4px solid #4caf50;
+  display: flex;
+  align-items: flex-start;
 }
 
 .dica-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
 }
 
 .dica-card p {
-  font-size: 18px;
-  font-weight: bold;
-  color: #555;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #37474f;
   margin: 0;
+}
+
+.no-dicas {
+  text-align: center;
+  color: #757575;
+  font-size: 1.1rem;
+  padding: 2rem;
+  grid-column: 1 / -1;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+@media (max-width: 768px) {
+  .dicas-page-container {
+    padding: 1.5rem;
+  }
+
+  .dicas-page-header h1 {
+    font-size: 1.75rem;
+  }
+
+  .dicas-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .dicas-page-container {
+    padding: 1rem;
+  }
+
+  .dicas-page-header h1 {
+    font-size: 1.5rem;
+  }
+
+  .btn-voltar {
+    padding: 0.6rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  .dica-card {
+    padding: 1.25rem;
+  }
 }
 

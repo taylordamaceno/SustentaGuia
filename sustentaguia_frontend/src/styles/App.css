@@ -1,41 +1,108 @@
 body {
-  font-family: sans-serif;
+  font-family: "Inter", "Segoe UI", Roboto, sans-serif;
   font-size: 16px;
-  background-color: #008b8b;
+  background-color: #f5f9f7;
+  margin: 0;
+  padding: 0;
+  color: #2c3e50;
+  line-height: 1.6;
 }
 
 header {
   text-align: center;
-  margin: 20px;
+  margin: 20px auto;
+  max-width: 1200px;
+  padding: 0 20px;
 }
 
 h1 {
-  font-size: 30px;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #009688;
+  margin-bottom: 1rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #00796b;
+  margin-bottom: 0.75rem;
 }
 
 p {
   text-align: justify;
+  margin-bottom: 1rem;
 }
 
 a {
-  color: white;
+  color: #009688;
   text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #00796b;
+  text-decoration: underline;
 }
 
 section {
-  margin-top: 20px;
+  margin: 2rem 0;
   text-align: center;
 }
 
 ul {
   list-style-type: none;
+  padding: 0;
+  margin: 1rem 0;
 }
 
 li {
-  margin-bottom: 10px;
+  margin-bottom: 0.75rem;
 }
 
 header p {
   font-family: Open Sans;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.btn {
+  display: inline-block;
+  background-color: #009688;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-decoration: none;
+}
+
+.btn:hover {
+  background-color: #00796b;
+  text-decoration: none;
+}
+
+.card {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 1.75rem;
+  }
+
+  h2 {
+    font-size: 1.25rem;
+  }
 }
 

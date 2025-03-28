@@ -1,0 +1,157 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+}
+
+.DashboardPage {
+    background-image: url('../assets/images/dashboardBackground.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100%;
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    padding: 20px;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+header {
+    background-color: #f4f4f4;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.DashboardPage h1, .DashboardPage h2, .DashboardPage p, .DashboardPage ul li {
+    font-weight: bold;
+    color: whitesmoke;
+    text-align: center;
+}
+
+.modules-list {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.modules-list li {
+    padding: 8px 0;
+}
+
+.module-icon {
+    /* You can expand on the icon styles here */
+}
+
+.dashboard-logo {
+    width: 50%;
+    max-width: 200px;
+    display: block;
+    margin: 0 auto;
+}
+
+@media (max-width: 600px) {
+    h1, h2 {
+        font-size: 1.2rem;
+    }
+
+    p, ul li {
+        font-size: 0.9rem;
+    }
+
+    .dashboard-logo {
+        width: 80%;
+    }
+}
+
+.DashboardPage footer {
+    text-align: center;
+}
+/* Estilos para a Página de Dicas */
+.dicas-list {
+    list-style: none;
+    padding: 0;
+    margin: 20px auto;
+    max-width: 600px;
+}
+
+.dica-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    background-color: #ffffff; /* Fundo branco */
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra leve */
+    font-size: 1.1rem;
+    color: #333;
+}
+
+.dica-icon {
+    margin-right: 10px;
+    width: 20px;
+    height: 20px;
+    background-color: #4caf50; /* Verde */
+    border-radius: 50%;
+}
+
+/* Estilo para o botão de logout */
+.logout-button {
+    background-color: #f44336; /* Vermelho */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+    margin: 10px 0;
+    float: right;
+}
+
+.logout-button:hover {
+    background-color: #d32f2f; /* Vermelho mais escuro */
+}
+
+/* Ajustes gerais do layout do Dashboard */
+.DashboardPage {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    padding: 10px;
+}
+
+.dashboard-logo {
+    width: 100px;
+    display: block;
+    margin: 0 auto;
+}
+
+header {
+    text-align: center;
+    position: relative;
+}
+
+header h1 {
+    margin-top: 10px;
+    font-size: 24px;
+    color: #333;
+}
+
+.modules-list, .tips-list {
+    list-style: none;
+    padding: 0;
+}
+
+.modules-list li, .tips-list li {
+    margin: 10px 0;
+}
+
+.module-icon, .tips-icon {
+    margin-right: 10px;
+}
+
+footer {
+    text-align: center;
+    margin-top: 20px;
+    color: #777;
+}

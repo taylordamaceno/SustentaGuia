@@ -1,157 +1,223 @@
-body, html {
-    height: 100%;
-    margin: 0;
-    font-family: 'Arial', sans-serif;
+body,
+html {
+  height: 100%;
+  margin: 0;
+  font-family: "Inter", "Segoe UI", Roboto, sans-serif;
 }
 
 .DashboardPage {
-    background-image: url('../assets/images/dashboardBackground.png');
-    background-size: cover;
-    background-repeat: no-repeat;
-    height: 100%;
-    font-family: 'Arial', sans-serif;
-    text-align: center;
-    padding: 20px;
-    max-width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  background-image: url("../assets/images/dashboardBackground.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  font-family: "Inter", "Segoe UI", Roboto, sans-serif;
+  position: relative;
+  display: flex;
+  flex-direction: column;
 }
 
-header {
-    background-color: #f4f4f4;
-    padding: 20px;
-    margin-bottom: 20px;
+.DashboardPage::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 1;
 }
 
-.DashboardPage h1, .DashboardPage h2, .DashboardPage p, .DashboardPage ul li {
-    font-weight: bold;
-    color: whitesmoke;
-    text-align: center;
+.DashboardPage header,
+.DashboardPage main,
+.DashboardPage footer {
+  position: relative;
+  z-index: 2;
 }
 
-.modules-list {
-    list-style-type: none;
-    padding-left: 0;
+.DashboardPage header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 2rem;
+  background-color: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.modules-list li {
-    padding: 8px 0;
+.DashboardPage header h1 {
+  color: white;
+  margin: 0;
+  font-size: 1.75rem;
+  font-weight: 700;
 }
 
-.module-icon {
-    /* You can expand on the icon styles here */
+.DashboardPage main {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.DashboardPage section {
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.DashboardPage section:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.DashboardPage h2 {
+  color: white;
+  font-size: 1.25rem;
+  margin-top: 0;
+  margin-bottom: 1.25rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.DashboardPage p {
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 0.5rem;
+}
+
+.modules-list,
+.tips-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.modules-list li,
+.tips-list li {
+  margin-bottom: 0.75rem;
+}
+
+.modules-list a,
+.tips-list a {
+  display: flex;
+  align-items: center;
+  color: white;
+  text-decoration: none;
+  padding: 0.75rem;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+  font-weight: 500;
+}
+
+.modules-list a:hover,
+.tips-list a:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  text-decoration: none;
+}
+
+.module-icon,
+.tips-icon {
+  margin-right: 0.75rem;
+  width: 24px;
+  height: 24px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(76, 175, 80, 0.2);
+  border-radius: 50%;
+  color: #4caf50;
 }
 
 .dashboard-logo {
-    width: 50%;
-    max-width: 200px;
-    display: block;
-    margin: 0 auto;
+  height: 40px;
+  margin-right: 1rem;
 }
 
-@media (max-width: 600px) {
-    h1, h2 {
-        font-size: 1.2rem;
-    }
-
-    p, ul li {
-        font-size: 0.9rem;
-    }
-
-    .dashboard-logo {
-        width: 80%;
-    }
-}
-
-.DashboardPage footer {
-    text-align: center;
-}
-/* Estilos para a Página de Dicas */
-.dicas-list {
-    list-style: none;
-    padding: 0;
-    margin: 20px auto;
-    max-width: 600px;
-}
-
-.dica-item {
-    display: flex;
-    align-items: center;
-    margin-bottom: 15px;
-    background-color: #ffffff; /* Fundo branco */
-    padding: 15px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra leve */
-    font-size: 1.1rem;
-    color: #333;
-}
-
-.dica-icon {
-    margin-right: 10px;
-    width: 20px;
-    height: 20px;
-    background-color: #4caf50; /* Verde */
-    border-radius: 50%;
-}
-
-/* Estilo para o botão de logout */
 .logout-button {
-    background-color: #f44336; /* Vermelho */
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-    border-radius: 5px;
-    font-size: 16px;
-    margin: 10px 0;
-    float: right;
+  background-color: rgba(244, 67, 54, 0.8);
+  color: white;
+  border: none;
+  padding: 0.6rem 1.25rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: background-color 0.3s;
 }
 
 .logout-button:hover {
-    background-color: #d32f2f; /* Vermelho mais escuro */
+  background-color: rgba(211, 47, 47, 1);
 }
 
-/* Ajustes gerais do layout do Dashboard */
-.DashboardPage {
-    font-family: Arial, sans-serif;
-    margin: 20px;
-    padding: 10px;
+.DashboardPage footer {
+  text-align: center;
+  color: rgba(255, 255, 255, 0.6);
+  padding: 1.5rem;
+  margin-top: auto;
+  font-size: 0.875rem;
 }
 
-.dashboard-logo {
-    width: 100px;
-    display: block;
-    margin: 0 auto;
+@media (max-width: 768px) {
+  .DashboardPage header {
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+  }
+
+  .DashboardPage header h1 {
+    margin: 0.5rem 0;
+  }
+
+  .logout-button {
+    margin-top: 0.5rem;
+  }
+
+  .DashboardPage main {
+    grid-template-columns: 1fr;
+    padding: 1.5rem 1rem;
+  }
 }
 
-header {
-    text-align: center;
-    position: relative;
+@media (max-width: 480px) {
+  .DashboardPage section {
+    padding: 1rem;
+  }
+
+  .modules-list a,
+  .tips-list a {
+    padding: 0.6rem;
+  }
 }
 
-header h1 {
-    margin-top: 10px;
-    font-size: 24px;
-    color: #333;
+/* Estilos para a Página de Dicas */
+.dicas-list {
+  list-style: none;
+  padding: 0;
+  margin: 20px auto;
+  max-width: 600px;
 }
 
-.modules-list, .tips-list {
-    list-style: none;
-    padding: 0;
+.dica-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  background-color: #ffffff; /* Fundo branco */
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra leve */
+  font-size: 1.1rem;
+  color: #333;
 }
 
-.modules-list li, .tips-list li {
-    margin: 10px 0;
+.dica-icon {
+  margin-right: 10px;
+  width: 20px;
+  height: 20px;
+  background-color: #4caf50; /* Verde */
+  border-radius: 50%;
 }
 
-.module-icon, .tips-icon {
-    margin-right: 10px;
-}
-
-footer {
-    text-align: center;
-    margin-top: 20px;
-    color: #777;
-}
