@@ -25,7 +25,7 @@ const SECRET_KEY = process.env.SECRET_KEY || "default_secret_key";
 
 // Configuração do CORS
 const corsOptions = {
-    origin: 'http://localhost:3000',
+    origin: ['http://localhost:3000', 'http://192.168.0.13:3000', 'http://192.168.0.0/24:3000'],
     credentials: true,
     optionsSuccessStatus: 200,
 };

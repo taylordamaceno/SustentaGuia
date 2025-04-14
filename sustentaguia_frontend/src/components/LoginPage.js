@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
-import axios from "axios"
+import api from "../config/axios"
 import "../styles/LoginPage.css"
 
 function LoginPage() {
@@ -29,7 +29,7 @@ function LoginPage() {
     setSuccessMessage(null)
 
     try {
-      const response = await axios.post("http://localhost:3001/register", {
+      const response = await api.post("/register", {
         name: formData.nome,
         email: formData.email,
         password: formData.senha,
@@ -52,7 +52,7 @@ function LoginPage() {
     setSuccessMessage(null)
 
     try {
-      const response = await axios.post("http://localhost:3001/login", {
+      const response = await api.post("/login", {
         email: formData.email,
         password: formData.senha,
       })
