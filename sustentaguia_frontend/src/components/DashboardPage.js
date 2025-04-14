@@ -14,7 +14,6 @@ function DashboardPage() {
   const navigate = useNavigate()
 
   useEffect(() => {
-    // Exemplo de chamada para carregar progresso do usuário
     const fetchUserProgress = async () => {
       setLoading(true)
       try {
@@ -38,7 +37,6 @@ function DashboardPage() {
         setUserProgress(data)
       } catch (error) {
         console.error("Erro ao carregar progresso do usuário:", error)
-        // Fallback para dados de exemplo se a API falhar
         setUserProgress({
           modulesCompleted: 0,
           quizzesPassed: 0,
@@ -68,7 +66,7 @@ function DashboardPage() {
     <div className="DashboardPage">
       <header>
         <div style={{ display: "flex", alignItems: "center" }}>
-          <img src={dashboard || "/placeholder.svg"} alt="Dashboard Logo" className="dashboard-logo" />
+          <img src={dashboard || "/placeholder.svg"} alt="SustentaGuia" className="dashboard-logo" />
           <h1>Painel de Aprendizado</h1>
         </div>
         <button onClick={handleLogout} className="logout-button">

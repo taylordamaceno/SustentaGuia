@@ -11,7 +11,7 @@ function LoginPage() {
   });
   const [errorMessage, setErrorMessage] = useState(null);
 
-  const handleInputChange = (e) => {
+  const handleInputChange = (e) => {  
     const { name, value } = e.target;
     setFormData(prevState => ({ ...prevState, [name]: value }));
   };

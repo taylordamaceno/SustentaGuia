@@ -7,7 +7,7 @@ function HomePage() {
   return (
     <div className="App">
       <header>
-        <img src={logo || "/placeholder.svg"} alt="Logotipo do SustentaGuia" className="logo-img" />
+        <img src={logo || "/placeholder.svg"} alt="SustentaGuia" className="logo-img" />
         <h1>Aprenda sobre energia verde e sustentabilidade</h1>
         <Link to="/login">Comece Agora</Link>
       </header>
@@ -39,7 +39,6 @@ function HomePage() {
             </ul>
           </section>
         </main>
-        <img src={guiazinhoVerde || "/placeholder.svg"} alt="Mascote SustentaGuia" className="guiazinhoImg" />
       </div>
       <footer>
         <p>SustentaGuia © {new Date().getFullYear()} - Todos os direitos reservados</p>

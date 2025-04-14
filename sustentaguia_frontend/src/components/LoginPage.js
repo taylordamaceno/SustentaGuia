@@ -1,18 +1,20 @@
 "use client"
 
 import { useState } from "react"
+import { useNavigate } from "react-router-dom"
 import axios from "axios"
-import logo from "../assets/images/sustentaguia.png"
 import "../styles/LoginPage.css"
 
 function LoginPage() {
+  const navigate = useNavigate()
   const [formData, setFormData] = useState({
     nome: "",
     email: "",
     senha: "",
   })
   const [errorMessage, setErrorMessage] = useState(null)
-  const [activeTab, setActiveTab] = useState("login")
+  const [successMessage, setSuccessMessage] = useState(null)
+  const [activeTab, setActiveTab] = useState("register") // Começa na aba de cadastro
   const [isLoading, setIsLoading] = useState(false)
 
   const handleInputChange = (e) => {
@@ -24,20 +26,20 @@ function LoginPage() {
     e.preventDefault()
     setIsLoading(true)
     setErrorMessage(null)
+    setSuccessMessage(null)
 
     try {
-      const response = await axios.post(`${process.env.REACT_APP_API_URL}/register`, {
+      const response = await axios.post("http://localhost:3001/register", {
         name: formData.nome,
         email: formData.email,
         password: formData.senha,
       })
-      console.log(response.data)
+      
+      setSuccessMessage("Cadastro realizado com sucesso! Faça login para continuar.")
+      setFormData({ nome: "", email: "", senha: "" })
       setActiveTab("login")
-      // Clear form data after successful registration
-      setFormData({ ...formData, nome: "" })
     } catch (error) {
-      console.error("Erro ao registrar:", error.response ? error.response.data : error.message)
-      setErrorMessage("Erro ao registrar. Por favor, tente novamente.")
+      setErrorMessage(error.response?.data?.error || "Erro ao registrar. Por favor, tente novamente.")
     } finally {
       setIsLoading(false)
     }
@@ -47,21 +49,20 @@ function LoginPage() {
     e.preventDefault()
     setIsLoading(true)
     setErrorMessage(null)
+    setSuccessMessage(null)
 
     try {
-      const response = await axios.post(`${process.env.REACT_APP_API_URL}/login`, {
+      const response = await axios.post("http://localhost:3001/login", {
         email: formData.email,
         password: formData.senha,
       })
 
-      if (response && response.data && response.data.token) {
+      if (response.data?.token) {
         localStorage.setItem("token", response.data.token)
-        window.location.href = "/dashboard"
-      } else {
-        setErrorMessage("Usuário ou senha inválidos")
+        navigate("/dashboard")
       }
     } catch (error) {
-      setErrorMessage("Usuário ou senha inválidos")
+      setErrorMessage(error.response?.data?.error || "Usuário ou senha inválidos")
     } finally {
       setIsLoading(false)
     }
@@ -70,60 +71,74 @@ function LoginPage() {
   return (
     <div className="LoginPage">
       <header>
-        <img src={logo || "/placeholder.svg"} alt="Logotipo do SustentaGuia" className="logo-img" />
-        <h1>Acesse sua conta</h1>
+        <h1>SustentaGuia</h1>
       </header>
+      
       <div className="tabs">
-        <button onClick={() => setActiveTab("login")} className={activeTab === "login" ? "active" : ""}>
-          Login
-        </button>
-        <button onClick={() => setActiveTab("register")} className={activeTab === "register" ? "active" : ""}>
+        <button 
+          onClick={() => {
+            setActiveTab("register")
+            setErrorMessage(null)
+            setSuccessMessage(null)
+          }} 
+          className={activeTab === "register" ? "active" : ""}
+        >
           Cadastro
         </button>
+        <button 
+          onClick={() => {
+            setActiveTab("login")
+            setErrorMessage(null)
+            setSuccessMessage(null)
+          }} 
+          className={activeTab === "login" ? "active" : ""}
+        >
+          Login
+        </button>
       </div>
+
       <main>
+        {successMessage && <div className="success-message">{successMessage}</div>}
+        {errorMessage && <div className="error-message">{errorMessage}</div>}
+        
         {activeTab === "register" && (
           <section>
             <h2>Criar nova conta</h2>
-            {errorMessage && <div className="error-message">{errorMessage}</div>}
             <form onSubmit={handleRegister}>
               <div className="form-group">
                 <label htmlFor="nome">Nome</label>
                 <input
                   type="text"
-                  className="form-control"
                   id="nome"
                   name="nome"
-                  placeholder="Seu nome completo"
                   value={formData.nome}
                   onChange={handleInputChange}
                   required
+                  placeholder="Seu nome completo"
                 />
               </div>
               <div className="form-group">
                 <label htmlFor="email">E-mail</label>
                 <input
                   type="email"
-                  className="form-control"
                   id="email"
                   name="email"
-                  placeholder="Seu e-mail"
                   value={formData.email}
                   onChange={handleInputChange}
                   required
+                  placeholder="Seu e-mail"
                 />
               </div>
               <div className="form-group">
                 <label htmlFor="senha">Senha</label>
                 <input
                   type="password"
-                  className="form-control"
                   id="senha"
                   name="senha"
-                  placeholder="Sua senha"
                   value={formData.senha}
                   onChange={handleInputChange}
                   required
+                  placeholder="Sua senha"
                 />
               </div>
               <button type="submit" className="btn-primary" disabled={isLoading}>
@@ -132,35 +147,33 @@ function LoginPage() {
             </form>
           </section>
         )}
+
         {activeTab === "login" && (
           <section>
             <h2>Entrar na sua conta</h2>
-            {errorMessage && <div className="error-message">{errorMessage}</div>}
             <form onSubmit={handleLogin}>
               <div className="form-group">
-                <label htmlFor="email">E-mail</label>
+                <label htmlFor="loginEmail">E-mail</label>
                 <input
                   type="email"
-                  className="form-control"
-                  id="email"
+                  id="loginEmail"
                   name="email"
-                  placeholder="Seu e-mail"
                   value={formData.email}
                   onChange={handleInputChange}
                   required
+                  placeholder="Seu e-mail"
                 />
               </div>
               <div className="form-group">
-                <label htmlFor="senha">Senha</label>
+                <label htmlFor="loginSenha">Senha</label>
                 <input
                   type="password"
-                  className="form-control"
-                  id="senha"
+                  id="loginSenha"
                   name="senha"
-                  placeholder="Sua senha"
                   value={formData.senha}
                   onChange={handleInputChange}
                   required
+                  placeholder="Sua senha"
                 />
               </div>
               <button type="submit" className="btn-primary" disabled={isLoading}>
@@ -170,9 +183,6 @@ function LoginPage() {
           </section>
         )}
       </main>
-      <footer>
-        <p>SustentaGuia © {new Date().getFullYear()} - Todos os direitos reservados</p>
-      </footer>
     </div>
   )
 }

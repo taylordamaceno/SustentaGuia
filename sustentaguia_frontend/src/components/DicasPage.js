@@ -14,7 +14,7 @@ function DicasPage() {
     const fetchDicas = async () => {
       setLoading(true)
       try {
-        const response = await fetch("http://localhost:3001/api/dicas")
+        const response = await fetch("http://localhost:3001http://localhost:3001/api/dicas")
 
         if (!response.ok) {
           throw new Error(`Erro ${response.status}: ${response.statusText}`)

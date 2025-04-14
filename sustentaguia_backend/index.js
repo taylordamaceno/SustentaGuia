@@ -8,6 +8,7 @@ const userProgressRoutes = require('./routes/userProgress');
 const { getDicas } = require('./models/dicas');
 
 const app = express();
+const path = require('path');
 const PORT = 3001;
 const SECRET_KEY = process.env.SECRET_KEY || "default_secret_key";
 
@@ -30,6 +31,7 @@ const corsOptions = {
 };
 
 app.use(cors(corsOptions));
+app.use('/public', express.static(path.join(__dirname, 'public')));
 app.use(express.json());
 
 // Rotas principais
