@@ -14,7 +14,7 @@ function LoginPage() {
   })
   const [errorMessage, setErrorMessage] = useState(null)
   const [successMessage, setSuccessMessage] = useState(null)
-  const [activeTab, setActiveTab] = useState("register") // Começa na aba de cadastro
+  const [activeTab, setActiveTab] = useState("register")
   const [isLoading, setIsLoading] = useState(false)
 
   const handleInputChange = (e) => {

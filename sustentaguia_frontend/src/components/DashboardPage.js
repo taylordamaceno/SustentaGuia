@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from "react"
 import { Link, useNavigate } from "react-router-dom"
-import dashboard from "../assets/images/dashboard.png"
 import "../styles/DashboardPage.css"
 
 function DashboardPage() {
@@ -66,7 +65,6 @@ function DashboardPage() {
     <div className="DashboardPage">
       <header>
         <div style={{ display: "flex", alignItems: "center" }}>
-          <img src={dashboard || "/placeholder.svg"} alt="SustentaGuia" className="dashboard-logo" />
           <h1>Painel de Aprendizado</h1>
         </div>
         <button onClick={handleLogout} className="logout-button">

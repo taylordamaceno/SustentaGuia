@@ -1,13 +1,10 @@
 import { Link } from "react-router-dom"
-import logo from "../assets/images/sustentaguia.png"
-import guiazinhoVerde from "../assets/images/guiazinhoverde.png"
 import "../styles/HomePage.css"
 
 function HomePage() {
   return (
     <div className="App">
       <header>
-        <img src={logo || "/placeholder.svg"} alt="SustentaGuia" className="logo-img" />
         <h1>Aprenda sobre energia verde e sustentabilidade</h1>
         <Link to="/login">Comece Agora</Link>
       </header>
@@ -40,9 +37,6 @@ function HomePage() {
           </section>
         </main>
       </div>
-      <footer>
-        <p>SustentaGuia © {new Date().getFullYear()} - Todos os direitos reservados</p>
-      </footer>
     </div>
   )
 }
