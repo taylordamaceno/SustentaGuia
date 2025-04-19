@@ -88,17 +88,39 @@ function authenticateToken(req, res, next) {
 
 // Rota de registro
 app.post('/register', async (req, res) => {
+    console.log('Recebido request para /register:', JSON.stringify(req.body));
     try {
         const { name, email, password } = req.body;
+        console.log('Dados recebidos:', { name, email, passwordLength: password ? password.length : 0 });
+        
+        if (!name || !email || !password) {
+            console.log('Dados incompletos');
+            return res.status(400).send({ error: 'Dados incompletos. Forneça nome, email e senha.' });
+        }
+        
+        console.log('Gerando hash da senha...');
         const hashedPassword = await bcrypt.hash(password, 10);
-        await db.query(
-            'INSERT INTO users (name, email, password) VALUES ($1, $2, $3)',
+        console.log('Hash gerado com sucesso');
+        
+        console.log('Inserindo no banco de dados...');
+        const result = await db.query(
+            'INSERT INTO users (name, email, password) VALUES ($1, $2, $3) RETURNING id',
             [name, email, hashedPassword]
         );
-        res.status(201).send({ message: 'Usuário registrado com sucesso!' });
+        console.log('Usuário inserido com sucesso. ID:', result.rows[0].id);
+        
+        console.log('Enviando resposta de sucesso');
+        return res.status(201).send({ message: 'Usuário registrado com sucesso!' });
     } catch (error) {
-        console.error("Erro ao registrar usuário:", error.message);
-        res.status(500).send({ error: 'Erro interno ao registrar usuário. Por favor, tente novamente.' });
+        console.error("Erro ao registrar usuário:", error);
+        
+        if (error.code === '23505') {
+            console.log('Email já está em uso');
+            return res.status(409).send({ error: 'Email já está em uso.' });
+        }
+        
+        console.log('Enviando resposta de erro');
+        return res.status(500).send({ error: 'Erro interno ao registrar usuário. Por favor, tente novamente.' });
     }
 });
 

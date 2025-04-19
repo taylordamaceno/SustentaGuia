@@ -1,5 +1,4 @@
 const express = require('express');
-const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const cors = require('cors');
 const db = require('./database'); // Importa o pool de conexão com o banco de dados
@@ -86,37 +85,72 @@ function authenticateToken(req, res, next) {
     });
 }
 
-// Rota de registro
+// Rota de registro (SEM bcrypt para evitar problemas)
 app.post('/register', async (req, res) => {
+    console.log('Recebido request para /register:', JSON.stringify(req.body));
     try {
         const { name, email, password } = req.body;
-        const hashedPassword = await bcrypt.hash(password, 10);
-        await db.query(
-            'INSERT INTO users (name, email, password) VALUES ($1, $2, $3)',
+        console.log('Dados recebidos:', { name, email, passwordLength: password ? password.length : 0 });
+        
+        if (!name || !email || !password) {
+            console.log('Dados incompletos');
+            return res.status(400).send({ error: 'Dados incompletos. Forneça nome, email e senha.' });
+        }
+        
+        // Usando um método simples em vez de bcrypt
+        const hashedPassword = 'senha_' + password;
+        console.log('Hash simulado para senha criado');
+        
+        console.log('Inserindo no banco de dados...');
+        const result = await db.query(
+            'INSERT INTO users (name, email, password) VALUES ($1, $2, $3) RETURNING id',
             [name, email, hashedPassword]
         );
-        res.status(201).send({ message: 'Usuário registrado com sucesso!' });
+        console.log('Usuário inserido com sucesso. ID:', result.rows[0].id);
+        
+        console.log('Enviando resposta de sucesso');
+        return res.status(201).send({ message: 'Usuário registrado com sucesso!' });
     } catch (error) {
-        console.error("Erro ao registrar usuário:", error.message);
-        res.status(500).send({ error: 'Erro interno ao registrar usuário. Por favor, tente novamente.' });
+        console.error("Erro ao registrar usuário:", error);
+        
+        if (error.code === '23505') {
+            console.log('Email já está em uso');
+            return res.status(409).send({ error: 'Email já está em uso.' });
+        }
+        
+        console.log('Enviando resposta de erro');
+        return res.status(500).send({ error: 'Erro interno ao registrar usuário. Por favor, tente novamente.' });
     }
 });
 
-// Rota de login
+// Rota de login (também sem bcrypt)
 app.post('/login', async (req, res) => {
+    console.log('Recebido request para /login:', JSON.stringify(req.body));
     try {
         const { email, password } = req.body;
+        console.log('Buscando usuário com email:', email);
+        
         const user = (await db.query('SELECT * FROM users WHERE email = $1', [email])).rows[0];
-        if (!user) return res.status(404).send({ error: 'Usuário não encontrado.' });
+        if (!user) {
+            console.log('Usuário não encontrado');
+            return res.status(404).send({ error: 'Usuário não encontrado.' });
+        }
 
-        const isValid = await bcrypt.compare(password, user.password);
-        if (!isValid) return res.status(401).send({ error: 'Senha inválida.' });
+        // Comparação simples sem bcrypt
+        const isValid = user.password === 'senha_' + password;
+        if (!isValid) {
+            console.log('Senha inválida');
+            return res.status(401).send({ error: 'Senha inválida.' });
+        }
 
+        console.log('Gerando token para usuário ID:', user.id);
         const token = jwt.sign({ id: user.id }, SECRET_KEY, { expiresIn: '1h' });
-        res.send({ message: 'Login bem-sucedido!', token });
+        console.log('Token gerado com sucesso');
+        
+        return res.send({ message: 'Login bem-sucedido!', token });
     } catch (error) {
-        console.error("Erro ao logar usuário:", error.message);
-        res.status(500).send({ error: 'Erro interno ao realizar login. Por favor, tente novamente.' });
+        console.error("Erro ao logar usuário:", error);
+        return res.status(500).send({ error: 'Erro interno ao realizar login. Por favor, tente novamente.' });
     }
 });
 
@@ -140,4 +174,4 @@ app.get('/health', (req, res) => {
 // Inicia o servidor
 app.listen(PORT, '0.0.0.0', () => {
     console.log(`Servidor rodando em http://0.0.0.0:${PORT}`);
-});
+}); 
