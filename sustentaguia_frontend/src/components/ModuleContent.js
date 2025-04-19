@@ -308,6 +308,163 @@ function ModuleContent() {
             </p>
           </div>
         )
+      case "6":
+        return (
+          <div className="module-content">
+            <h2>Introdução ao Módulo 6: AgroTech Sustentável</h2>
+            <p>
+              Inovação no campo com consciência ambiental.
+            </p>
+            <h3>O que é AgroTech?</h3>
+            <p>
+              AgroTech (ou AgTech) é a junção de agricultura com tecnologia. São inovações que tornam o cultivo mais 
+              eficiente, com menos desperdício e impacto ambiental. Desde sensores que medem umidade no solo até 
+              tratores autônomos movidos a energia limpa, a tecnologia está transformando o campo.
+            </p>
+            <h3>Sensores e Irrigação Inteligente</h3>
+            <p>
+              Com sensores de umidade no solo, o agricultor só irriga quando necessário, economizando até 50% de água. 
+              Algumas soluções usam drones para identificar áreas secas ou doentes da plantação. No Brasil, a irrigação 
+              representa cerca de 70% do consumo de água doce — com tecnologia, esse número pode cair drasticamente.
+            </p>
+            <h3>Agricultura de Precisão</h3>
+            <p>
+              Combinando GPS, dados climáticos e IA, é possível aplicar fertilizantes e defensivos de forma localizada, 
+              reduzindo impactos no solo e na saúde humana. Isso também reduz a compactação do solo e melhora a 
+              produtividade.
+            </p>
+            <h3>Agricultura Regenerativa com tecnologia</h3>
+            <p>
+              A AgroTech também apoia práticas regenerativas: cultivo sem agrotóxicos, rotação de culturas, compostagem 
+              automatizada. Sistemas integrados monitoram a qualidade do solo em tempo real, ajudando o agricultor a 
+              manter a fertilidade.
+            </p>
+            <h3>Casos de sucesso no Brasil</h3>
+            <p>
+              Fazendas solares autônomas no Nordeste utilizam energia solar para alimentar sistemas de irrigação 
+              automatizada. Startups como a Solinftec e Agrosmart são líderes em AgroTech sustentável no Brasil.
+            </p>
+          </div>
+        )
+      case "7":
+        return (
+          <div className="module-content">
+            <h2>Introdução ao Módulo 7: Cidades Inteligentes e Sustentáveis</h2>
+            <p>
+              Como o urbanismo está sendo transformado pela tecnologia verde.
+            </p>
+            <h3>O que são?</h3>
+            <p>
+              Cidades inteligentes e sustentáveis usam tecnologia para melhorar a vida urbana com foco em eficiência 
+              energética, mobilidade limpa e qualidade de vida.
+            </p>
+            <h3>Mobilidade elétrica e transporte coletivo</h3>
+            <p>
+              Incentivo a carros elétricos, bicicletas compartilhadas e ônibus elétricos. Emissões de CO₂ são 
+              drasticamente reduzidas com transporte coletivo limpo.
+            </p>
+            <h3>Telhados verdes e hortas urbanas</h3>
+            <p>
+              Melhoram o conforto térmico e a qualidade do ar. Reduzem enchentes e conectam moradores ao meio ambiente 
+              urbano.
+            </p>
+            <h3>Iluminação pública eficiente</h3>
+            <p>
+              Iluminação LED com sensores de presença reduz em até 60% o consumo de energia pública.
+            </p>
+            <h3>Gestão de resíduos com IoT</h3>
+            <p>
+              Lixeiras inteligentes otimizam a coleta e reduzem o uso de combustível e tempo dos serviços urbanos.
+            </p>
+          </div>
+        )
+      case "8":
+        return (
+          <div className="module-content">
+            <h2>Introdução ao Módulo 8: Habitação Sustentável</h2>
+            <p>
+              Sua casa também pode ser parte da solução.
+            </p>
+            <h3>Construir com consciência</h3>
+            <p>
+              Uso de materiais ecológicos como tijolos solo-cimento, madeira certificada e telhas recicladas.
+            </p>
+            <h3>Eficiência energética no dia a dia</h3>
+            <p>
+              Projetos arquitetônicos que aproveitam iluminação natural, sombreamento e ventilação cruzada para 
+              economizar energia.
+            </p>
+            <h3>Energia solar residencial</h3>
+            <p>
+              Instalar painéis solares pode reduzir até 95% da conta de luz e oferece retorno em poucos anos.
+            </p>
+            <h3>Conforto térmico natural</h3>
+            <p>
+              Plantas, brises e cores claras ajudam a manter o ambiente fresco sem depender de ar-condicionado.
+            </p>
+          </div>
+        )
+      case "9":
+        return (
+          <div className="module-content">
+            <h2>Introdução ao Módulo 9: Consumo Consciente</h2>
+            <p>
+              Sustentabilidade começa nas pequenas escolhas.
+            </p>
+            <h3>O que é?</h3>
+            <p>
+              É consumir com responsabilidade, escolhendo produtos que respeitam o meio ambiente, o trabalhador e a saúde.
+            </p>
+            <h3>Pegada de carbono de produtos</h3>
+            <p>
+              Alguns produtos geram muito CO₂ em sua produção — saber disso ajuda a fazer escolhas melhores.
+            </p>
+            <h3>Dicas práticas</h3>
+            <p>
+              Evite plástico, leve sua sacola, compre a granel, escolha produtores locais.
+            </p>
+            <h3>Rótulos e certificações</h3>
+            <p>
+              FSC, Orgânico Brasil, Selo Eu Reciclo — entenda os selos antes de comprar.
+            </p>
+            <h3>Compre menos, compre melhor</h3>
+            <p>
+              Planeje, conserte, doe, troque. Cada item não comprado é um impacto evitado.
+            </p>
+          </div>
+        )
+      case "10":
+        return (
+          <div className="module-content">
+            <h2>Introdução ao Módulo 10: Economia Circular e Reciclagem</h2>
+            <p>
+              Do descarte à reinvenção.
+            </p>
+            <h3>O que é Economia Circular?</h3>
+            <p>
+              Modelo que reintegra resíduos ao sistema produtivo, evitando o desperdício e prolongando o ciclo de vida 
+              dos produtos.
+            </p>
+            <h3>Reciclagem, compostagem, reutilização</h3>
+            <p>
+              Cada técnica com seu papel: a compostagem para o orgânico, a reciclagem para materiais transformáveis e a 
+              reutilização para evitar novos descartes.
+            </p>
+            <h3>Logística Reversa</h3>
+            <p>
+              Fabricantes devem receber de volta produtos usados — como pilhas, lâmpadas e eletrônicos.
+            </p>
+            <h3>Upcycling e design regenerativo</h3>
+            <p>
+              Transformar lixo em valor: arte, moda ou móveis com resíduos que ganham nova função.
+            </p>
+            <h3>O papel dos catadores</h3>
+            <p>
+              Mais de 1 milhão de pessoas no Brasil sobrevivem da coleta de recicláveis. Respeitar, apoiar e separar 
+              corretamente é essencial.
+            </p>
+          </div>
+        )
       default:
         return (
           <div className="module-content">
@@ -334,7 +491,17 @@ function ModuleContent() {
                 ? "Energia Hidroelétrica"
                 : id === "5"
                   ? "Biomassa e Biogás"
-                  : "Conteúdo"}
+                  : id === "6"
+                    ? "AgroTech Sustentável"
+                    : id === "7"
+                      ? "Cidades Inteligentes e Sustentáveis"
+                      : id === "8"
+                        ? "Habitação Sustentável"
+                        : id === "9"
+                          ? "Consumo Consciente"
+                          : id === "10"
+                            ? "Economia Circular e Reciclagem"
+                            : "Conteúdo"}
       </h1>
       {getContent(id)}
       <button onClick={goBack} className="back-button">

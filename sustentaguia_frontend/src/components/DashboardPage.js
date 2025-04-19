@@ -59,6 +59,11 @@ function DashboardPage() {
     { id: 3, title: "Energia Eólica", icon: "💨" },
     { id: 4, title: "Energia Hidroelétrica", icon: "💧" },
     { id: 5, title: "Biomassa e Biogás", icon: "🌿" },
+    { id: 6, title: "AgroTech Sustentável", icon: "🌾" },
+    { id: 7, title: "Cidades Inteligentes e Sustentáveis", icon: "🏙️" },
+    { id: 8, title: "Habitação Sustentável", icon: "🏡" },
+    { id: 9, title: "Consumo Consciente", icon: "🛒" },
+    { id: 10, title: "Economia Circular e Reciclagem", icon: "♻️" },
   ]
 
   return (
@@ -93,7 +98,7 @@ function DashboardPage() {
             <p>Carregando...</p>
           ) : (
             <>
-              <p>Módulos concluídos: {userProgress.modulesCompleted} de 5</p>
+              <p>Módulos concluídos: {userProgress.modulesCompleted} de 10</p>
               <p>Quizzes aprovados: {userProgress.quizzesPassed}</p>
               <div
                 style={{
@@ -105,7 +110,7 @@ function DashboardPage() {
               >
                 <div
                   style={{
-                    width: `${(userProgress.modulesCompleted / 5) * 100}%`,
+                    width: `${(userProgress.modulesCompleted / 10) * 100}%`,
                     height: "100%",
                     backgroundColor: "#4caf50",
                     borderRadius: "4px",
