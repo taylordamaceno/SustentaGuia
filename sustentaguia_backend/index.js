@@ -182,7 +182,17 @@ app.post('/auth/google', async (req, res) => {
         const { OAuth2Client } = require('google-auth-library');
         
         // O Client ID deve ser armazenado em variável de ambiente
-        const CLIENT_ID = process.env.GOOGLE_CLIENT_ID || 'SEU_CLIENT_ID_AQUI';
+        // Usando a variável de ambiente, mas com um comentário explicativo para configuração
+        const CLIENT_ID = process.env.GOOGLE_CLIENT_ID;
+        
+        // Se não houver CLIENT_ID configurado, retornar erro com instruções claras
+        if (!CLIENT_ID) {
+            console.error('GOOGLE_CLIENT_ID não configurado! Adicione ao arquivo .env');
+            return res.status(500).send({
+                error: 'Erro de configuração do servidor. Entre em contato com o administrador.',
+                details: 'A autenticação Google requer configuração do Client ID.'
+            });
+        }
         
         try {
             const client = new OAuth2Client(CLIENT_ID);

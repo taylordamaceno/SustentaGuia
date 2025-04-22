@@ -315,34 +315,63 @@ function ModuleContent() {
             <p>
               Inovação no campo com consciência ambiental.
             </p>
+            <p>
+              A revolução verde 2.0 já começou: tecnologia e agricultura caminham juntas para aumentar a produtividade, respeitando o meio ambiente e usando os recursos de forma mais eficiente.
+            </p>
             <h3>O que é AgroTech?</h3>
             <p>
-              AgroTech (ou AgTech) é a junção de agricultura com tecnologia. São inovações que tornam o cultivo mais 
-              eficiente, com menos desperdício e impacto ambiental. Desde sensores que medem umidade no solo até 
-              tratores autônomos movidos a energia limpa, a tecnologia está transformando o campo.
+              AgroTech (ou AgTech) é a união da agricultura com as mais novas tecnologias: sensores, inteligência artificial, robótica e big data a serviço do campo.
+              O objetivo é tornar a produção mais eficiente, sustentável e adaptada às mudanças climáticas.
             </p>
             <h3>Sensores e Irrigação Inteligente</h3>
             <p>
-              Com sensores de umidade no solo, o agricultor só irriga quando necessário, economizando até 50% de água. 
-              Algumas soluções usam drones para identificar áreas secas ou doentes da plantação. No Brasil, a irrigação 
-              representa cerca de 70% do consumo de água doce — com tecnologia, esse número pode cair drasticamente.
+              Sensores de solo monitoram umidade, nutrientes e temperatura em tempo real.
+            </p>
+            <p>
+              Sistemas de irrigação automatizada evitam desperdício de água, irrigando apenas quando necessário.
+            </p>
+            <p>
+              Drones agrícolas identificam pragas e doenças precocemente, permitindo tratamentos localizados e menos agressivos.
+            </p>
+            <p>
+              🔎 Curiosidade: O uso de sensores pode reduzir o consumo de água na agricultura em até 50%, além de aumentar a produtividade das lavouras.
             </p>
             <h3>Agricultura de Precisão</h3>
             <p>
-              Combinando GPS, dados climáticos e IA, é possível aplicar fertilizantes e defensivos de forma localizada, 
-              reduzindo impactos no solo e na saúde humana. Isso também reduz a compactação do solo e melhora a 
-              produtividade.
+              Através da combinação de GPS, dados climáticos e análise de solo:
+            </p>
+            <ul>
+              <li>Fertilizantes e defensivos são aplicados apenas onde há necessidade.</li>
+              <li>Reduz a compactação do solo e evita a degradação ambiental.</li>
+              <li>Aumenta a produtividade por hectare de forma sustentável.</li>
+            </ul>
+            <p>
+              Hoje, equipamentos como tratores e colheitadeiras operam com alta precisão, guiados por satélites.
             </p>
             <h3>Agricultura Regenerativa com tecnologia</h3>
             <p>
-              A AgroTech também apoia práticas regenerativas: cultivo sem agrotóxicos, rotação de culturas, compostagem 
-              automatizada. Sistemas integrados monitoram a qualidade do solo em tempo real, ajudando o agricultor a 
-              manter a fertilidade.
+              Além de eficiência, a AgroTech também fortalece práticas sustentáveis:
+            </p>
+            <ul>
+              <li>Rotação de culturas assistida por dados.</li>
+              <li>Compostagem de resíduos monitorada automaticamente.</li>
+              <li>Sistemas que regeneram o solo ao invés de apenas explorá-lo.</li>
+            </ul>
+            <p>
+              A agricultura regenerativa alia produção agrícola com restauração de ecossistemas.
             </p>
             <h3>Casos de sucesso no Brasil</h3>
             <p>
-              Fazendas solares autônomas no Nordeste utilizam energia solar para alimentar sistemas de irrigação 
-              automatizada. Startups como a Solinftec e Agrosmart são líderes em AgroTech sustentável no Brasil.
+              Fazendas solares no Semiárido nordestino: irrigação autossuficiente com energia renovável.
+            </p>
+            <p>
+              Solinftec: pioneira em automação de maquinário e inteligência de dados agrícolas.
+            </p>
+            <p>
+              Agrosmart: plataforma de monitoramento de clima e solo para agricultores de todos os portes.
+            </p>
+            <p>
+              O Brasil é hoje referência em AgroTech aplicada à sustentabilidade.
             </p>
           </div>
         )
@@ -353,28 +382,62 @@ function ModuleContent() {
             <p>
               Como o urbanismo está sendo transformado pela tecnologia verde.
             </p>
+            <p>
+              O conceito de cidade inteligente envolve o uso de tecnologia para tornar os centros urbanos mais eficientes, sustentáveis e agradáveis de se viver.
+            </p>
             <h3>O que são?</h3>
             <p>
-              Cidades inteligentes e sustentáveis usam tecnologia para melhorar a vida urbana com foco em eficiência 
-              energética, mobilidade limpa e qualidade de vida.
+              Cidades inteligentes integram tecnologia em infraestrutura, serviços e governança.
+              O objetivo: otimizar recursos, reduzir impactos ambientais e melhorar a qualidade de vida.
             </p>
             <h3>Mobilidade elétrica e transporte coletivo</h3>
             <p>
-              Incentivo a carros elétricos, bicicletas compartilhadas e ônibus elétricos. Emissões de CO₂ são 
-              drasticamente reduzidas com transporte coletivo limpo.
+              Incentivo a ônibus elétricos, ciclovias conectadas e carros compartilhados.
+            </p>
+            <p>
+              Estações de carregamento para veículos elétricos se tornam comuns.
+            </p>
+            <p>
+              Aplicativos otimizam rotas e horários de transporte público.
+            </p>
+            <p>
+              📉 Um ônibus elétrico pode reduzir a emissão de CO₂ em até 80% em comparação com um diesel tradicional.
             </p>
             <h3>Telhados verdes e hortas urbanas</h3>
             <p>
-              Melhoram o conforto térmico e a qualidade do ar. Reduzem enchentes e conectam moradores ao meio ambiente 
-              urbano.
+              Reduzem o efeito de ilhas de calor nas cidades.
+            </p>
+            <p>
+              Capturam carbono e melhoram a qualidade do ar.
+            </p>
+            <p>
+              Promovem alimentação urbana saudável e de baixo impacto.
+            </p>
+            <p>
+              Vários edifícios modernos já incluem telhados vegetados como item obrigatório de construção sustentável.
             </p>
             <h3>Iluminação pública eficiente</h3>
             <p>
-              Iluminação LED com sensores de presença reduz em até 60% o consumo de energia pública.
+              Substituição de lâmpadas tradicionais por LEDs inteligentes.
+            </p>
+            <p>
+              Sensores que ajustam a iluminação conforme movimento e horários.
+            </p>
+            <p>
+              Economia de até 60% de energia apenas na iluminação pública.
             </p>
             <h3>Gestão de resíduos com IoT</h3>
             <p>
-              Lixeiras inteligentes otimizam a coleta e reduzem o uso de combustível e tempo dos serviços urbanos.
+              Lixeiras inteligentes indicam nível de ocupação.
+            </p>
+            <p>
+              Roteiros de coleta são otimizados para reduzir CO₂ e custos.
+            </p>
+            <p>
+              Reciclagem e compostagem são monitoradas via aplicativos.
+            </p>
+            <p>
+              Cidades como Amsterdã, Curitiba e Barcelona são referência mundial em gestão de resíduos inteligentes.
             </p>
           </div>
         )
@@ -385,22 +448,54 @@ function ModuleContent() {
             <p>
               Sua casa também pode ser parte da solução.
             </p>
+            <p>
+              A maneira como construímos e mantemos nossas casas tem impacto direto nas emissões globais de carbono e no uso de recursos.
+            </p>
             <h3>Construir com consciência</h3>
             <p>
-              Uso de materiais ecológicos como tijolos solo-cimento, madeira certificada e telhas recicladas.
+              Utilizar materiais ecológicos: tijolos de solo-cimento, madeira certificada, telhas recicladas.
+            </p>
+            <p>
+              Reaproveitamento de resíduos da construção para novas obras.
+            </p>
+            <p>
+              Escolha de fornecedores locais para reduzir emissões de transporte.
             </p>
             <h3>Eficiência energética no dia a dia</h3>
             <p>
-              Projetos arquitetônicos que aproveitam iluminação natural, sombreamento e ventilação cruzada para 
-              economizar energia.
+              Posicionamento inteligente de janelas para maximizar iluminação natural.
+            </p>
+            <p>
+              Uso de cortinas térmicas, persianas e ventilação cruzada para reduzir o uso de ar-condicionado.
+            </p>
+            <p>
+              Eletrodomésticos com selo de eficiência energética (ex: PROCEL A).
             </p>
             <h3>Energia solar residencial</h3>
             <p>
-              Instalar painéis solares pode reduzir até 95% da conta de luz e oferece retorno em poucos anos.
+              Instalar painéis fotovoltaicos para gerar energia limpa em casa.
+            </p>
+            <p>
+              Reduzir a dependência de fontes poluentes e instáveis.
+            </p>
+            <p>
+              Possibilidade de vender o excedente para a rede elétrica (geração distribuída).
+            </p>
+            <p>
+              Hoje no Brasil, o payback de um sistema solar residencial pode ser alcançado em 5 a 7 anos.
             </p>
             <h3>Conforto térmico natural</h3>
             <p>
-              Plantas, brises e cores claras ajudam a manter o ambiente fresco sem depender de ar-condicionado.
+              Uso de plantas ao redor da casa para sombreamento.
+            </p>
+            <p>
+              Telhados verdes ajudam no isolamento térmico.
+            </p>
+            <p>
+              Pintura externa de cores claras para refletir o calor.
+            </p>
+            <p>
+              Essas estratégias podem reduzir a temperatura interna em até 6°C, melhorando o conforto e economizando energia.
             </p>
           </div>
         )
@@ -410,26 +505,121 @@ function ModuleContent() {
             <h2>Introdução ao Módulo 9: Consumo Consciente</h2>
             <p>
               Sustentabilidade começa nas pequenas escolhas.
+              Cada decisão de compra impacta não apenas o nosso bolso, mas também o meio ambiente e as próximas gerações.
             </p>
-            <h3>O que é?</h3>
+            <h3>O que é Consumo Consciente?</h3>
             <p>
-              É consumir com responsabilidade, escolhendo produtos que respeitam o meio ambiente, o trabalhador e a saúde.
+              É o ato de consumir de forma mais crítica e responsável, pensando além do preço ou da marca.
+              Significa considerar de onde vem o produto, como foi feito e qual será seu destino final.
             </p>
-            <h3>Pegada de carbono de produtos</h3>
             <p>
-              Alguns produtos geram muito CO₂ em sua produção — saber disso ajuda a fazer escolhas melhores.
+              Consumir conscientemente é entender que tudo que compramos gera impactos sociais, ambientais e econômicos.
             </p>
-            <h3>Dicas práticas</h3>
+            <h3>Pegada de Carbono de Produtos</h3>
             <p>
-              Evite plástico, leve sua sacola, compre a granel, escolha produtores locais.
+              Todo produto carrega uma "pegada ecológica" invisível:
             </p>
-            <h3>Rótulos e certificações</h3>
+            <ul>
+              <li>Energia gasta na fabricação</li>
+              <li>Transporte até o mercado</li>
+              <li>Embalagens que serão descartadas</li>
+            </ul>
             <p>
-              FSC, Orgânico Brasil, Selo Eu Reciclo — entenda os selos antes de comprar.
+              Por exemplo:
+            </p>
+            <ul>
+              <li>Uma camiseta de algodão pode consumir 2.700 litros de água para ser produzida — o equivalente ao que uma pessoa bebe em quase 3 anos!</li>
+              <li>O transporte aéreo de frutas gera emissões muito maiores do que o cultivo local.</li>
+            </ul>
+            <p>
+              Escolher bem reduz nossa pegada de carbono individual.
+            </p>
+            <h3>Dicas práticas para consumir melhor</h3>
+            <ul>
+              <li>Priorize embalagens recicláveis ou compostáveis.</li>
+              <li>Prefira produtos a granel — menos embalagem, menos lixo.</li>
+              <li>Dê preferência a produtos locais e sazonais.
+              (Frutas e verduras da estação consomem menos recursos no cultivo.)</li>
+              <li>Valorize marcas que adotam práticas justas e sustentáveis.</li>
+              <li>Questione promoções: preciso mesmo? Ou estou comprando por impulso?</li>
+              <li>Apoie pequenos produtores e cooperativas.</li>
+              <li>Dê prioridade a produtos duráveis, que não precisam ser substituídos rapidamente.</li>
+            </ul>
+            <h3>Rótulos e Certificações que Ajudam</h3>
+            <p>
+              Entender selos pode ser a diferença entre um produto realmente sustentável e um marketing vazio.
+            </p>
+            <ul>
+              <li><strong>FSC (Forest Stewardship Council):</strong> garante que a madeira veio de reflorestamento responsável.</li>
+              <li><strong>Selo Orgânico Brasil:</strong> assegura que a produção agrícola foi feita sem agrotóxicos proibidos e respeitando normas ambientais.</li>
+              <li><strong>Eu Reciclo:</strong> empresas que participam de programas de logística reversa de embalagens.</li>
+              <li><strong>Fair Trade:</strong> indica comércio justo, com respeito aos produtores e trabalhadores.</li>
+            </ul>
+            <p>
+              Leia os rótulos! Nem tudo que parece "verde" é realmente sustentável.
             </p>
             <h3>Compre menos, compre melhor</h3>
+            <ul>
+              <li>Planeje antes de comprar. Faça listas e evite compras por impulso.</li>
+              <li>Prefira qualidade a quantidade. Um bom produto dura mais e gera menos lixo.</li>
+              <li>Doe, troque ou venda produtos que você não usa mais.</li>
+              <li>Reforme ou conserte antes de jogar fora. Sapatos, roupas, móveis podem ter vida longa.</li>
+              <li>Adote a regra dos 30 dias: Se você deseja algo, espere 30 dias. Se ainda quiser, aí sim avalie comprar.</li>
+            </ul>
+            <h3>O poder da escolha</h3>
             <p>
-              Planeje, conserte, doe, troque. Cada item não comprado é um impacto evitado.
+              Cada compra é um "voto" no tipo de mundo que queremos.
+            </p>
+            <ul>
+              <li>Comprar de marcas sustentáveis fortalece negócios conscientes.</li>
+              <li>Reduzir o consumo de produtos descartáveis pressiona o mercado a mudar.</li>
+              <li>Apoiar a economia local gera empregos e diminui o impacto ambiental de transporte.</li>
+            </ul>
+            <p>
+              Pequenas ações de consumo consciente, quando multiplicadas por milhões de pessoas, geram grandes mudanças no planeta.
+            </p>
+            <h3>Atenção ao Greenwashing</h3>
+            <p>
+              Nem tudo que se diz "eco" é realmente sustentável.
+            </p>
+            <p>
+              Greenwashing é quando empresas usam marketing "verde" de forma enganosa para parecerem sustentáveis sem de fato serem.
+            </p>
+            <p>
+              🔎 Sempre pergunte:
+            </p>
+            <ul>
+              <li>Quais ações concretas a empresa tem?</li>
+              <li>Existe transparência nos dados ambientais?</li>
+              <li>Há certificações reconhecidas?</li>
+            </ul>
+            <p>
+              Seja um consumidor atento e informado.
+            </p>
+            <h3>Sustentabilidade além da compra</h3>
+            <p>
+              O consumo consciente não termina na loja.
+            </p>
+            <ul>
+              <li>Recicle corretamente. Separe lixo seco e orgânico.</li>
+              <li>Composte resíduos orgânicos.</li>
+              <li>Cuide dos produtos para que durem mais.</li>
+              <li>Compartilhe dicas e conhecimentos sobre consumo consciente com amigos e família.</li>
+            </ul>
+            <p>
+              A mudança é contagiosa.
+            </p>
+            <h3>Consumo consciente é um processo</h3>
+            <p>
+              Ninguém se torna 100% sustentável da noite para o dia.
+            </p>
+            <ul>
+              <li>Comece com pequenas mudanças.</li>
+              <li>Escolha suas batalhas: transporte, alimentação, vestuário?</li>
+              <li>Seja gentil consigo mesmo no processo.</li>
+            </ul>
+            <p>
+              Cada pequena atitude já faz diferença no caminho para um mundo mais justo, equilibrado e sustentável.
             </p>
           </div>
         )
@@ -440,28 +630,56 @@ function ModuleContent() {
             <p>
               Do descarte à reinvenção.
             </p>
+            <p>
+              A natureza não gera lixo — tudo é reaproveitado. A economia circular busca replicar esse modelo no sistema econômico humano.
+            </p>
             <h3>O que é Economia Circular?</h3>
             <p>
-              Modelo que reintegra resíduos ao sistema produtivo, evitando o desperdício e prolongando o ciclo de vida 
-              dos produtos.
+              É um modelo em que produtos e materiais circulam na economia pelo maior tempo possível.
+              Ao invés do "extrair, produzir, descartar", a ideia é "reduzir, reutilizar, reciclar e regenerar".
             </p>
             <h3>Reciclagem, compostagem, reutilização</h3>
             <p>
-              Cada técnica com seu papel: a compostagem para o orgânico, a reciclagem para materiais transformáveis e a 
-              reutilização para evitar novos descartes.
+              Reciclagem: transforma materiais usados em novos produtos.
+            </p>
+            <p>
+              Compostagem: converte resíduos orgânicos em adubo natural.
+            </p>
+            <p>
+              Reutilização: prolonga a vida útil dos produtos através de novos usos.
+            </p>
+            <p>
+              Cada ação reduz a necessidade de extrair novos recursos da natureza.
             </p>
             <h3>Logística Reversa</h3>
             <p>
-              Fabricantes devem receber de volta produtos usados — como pilhas, lâmpadas e eletrônicos.
+              Empresas devem recolher seus produtos após o consumo.
+            </p>
+            <p>
+              Exemplo: coleta de pilhas, eletrônicos, pneus usados.
+            </p>
+            <p>
+              No Brasil, a Política Nacional de Resíduos Sólidos (PNRS) obriga grandes fabricantes a implementar logística reversa.
             </p>
             <h3>Upcycling e design regenerativo</h3>
             <p>
-              Transformar lixo em valor: arte, moda ou móveis com resíduos que ganham nova função.
+              Upcycling: transformar resíduos em produtos de maior valor, como moda sustentável ou mobiliário.
+            </p>
+            <p>
+              Design regenerativo: projetar produtos pensando desde o início em sua reutilização ou reciclagem.
+            </p>
+            <p>
+              Exemplo: mochilas feitas de pneus reciclados, móveis de pallets.
             </p>
             <h3>O papel dos catadores</h3>
             <p>
-              Mais de 1 milhão de pessoas no Brasil sobrevivem da coleta de recicláveis. Respeitar, apoiar e separar 
-              corretamente é essencial.
+              Mais de 1 milhão de catadores no Brasil contribuem diretamente para a reciclagem.
+            </p>
+            <p>
+              Apoiar a coleta seletiva e as cooperativas é essencial para fortalecer a economia circular.
+            </p>
+            <p>
+              Separar o lixo corretamente é um ato de respeito e responsabilidade social.
             </p>
           </div>
         )
