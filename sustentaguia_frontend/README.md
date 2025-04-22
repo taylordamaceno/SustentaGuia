@@ -1,3 +1,42 @@
+# SustentaGuia Frontend
+
+Este é o frontend da aplicação SustentaGuia, uma plataforma educacional sobre sustentabilidade.
+
+## Configuração
+
+1. Clone o repositório
+2. Instale as dependências:
+```bash
+npm install
+```
+
+## Variáveis de Ambiente
+
+Crie um arquivo `.env.local` na raiz do projeto frontend com as seguintes variáveis:
+
+```
+# Google OAuth
+NEXT_PUBLIC_GOOGLE_CLIENT_ID=SEU_CLIENT_ID_AQUI
+```
+
+> **Nota**: Você precisará obter um Client ID válido no Google Cloud Console. Consulte a documentação em `docs/auth_google_onboarding.md` para mais detalhes.
+
+## Rodando a aplicação
+
+```bash
+npm run dev
+```
+
+A aplicação estará disponível em [http://localhost:3000](http://localhost:3000).
+
+## Funcionalidades
+
+- Login e registro de usuário (incluindo autenticação com Google)
+- Dashboard personalizado
+- Módulos educacionais
+- Acompanhamento de progresso
+- Dicas de sustentabilidade
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

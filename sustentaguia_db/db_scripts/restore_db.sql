@@ -6,9 +6,21 @@ CREATE TABLE IF NOT EXISTS users (
     name VARCHAR(255) NOT NULL,
     email VARCHAR(255) UNIQUE NOT NULL,
     password VARCHAR(255) NOT NULL,
+    auth_type VARCHAR(50) DEFAULT 'local',  -- Tipo de autenticação (local ou google)
+    google_id VARCHAR(255) UNIQUE,          -- ID do usuário no Google
+    picture_url TEXT,                       -- URL da foto de perfil
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
+
+-- Índices para melhorar a performance de busca
+CREATE INDEX IF NOT EXISTS idx_users_auth_type ON users(auth_type);
+CREATE INDEX IF NOT EXISTS idx_users_email ON users(email);
+
+-- Adicionar comentários para documentação
+COMMENT ON COLUMN users.auth_type IS 'Tipo de autenticação: local (senha) ou google';
+COMMENT ON COLUMN users.google_id IS 'ID único do usuário no Google';
+COMMENT ON COLUMN users.picture_url IS 'URL da foto de perfil do usuário';
 
 -- Tabela de módulos
 CREATE TABLE IF NOT EXISTS modules (

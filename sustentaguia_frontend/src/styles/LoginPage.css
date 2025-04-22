@@ -143,6 +143,48 @@ html {
   font-size: 0.875rem;
 }
 
+.social-login {
+  margin-top: 2rem;
+  text-align: center;
+  border-top: 1px solid #eee;
+  padding-top: 1.5rem;
+}
+
+.social-login p {
+  margin-bottom: 1rem;
+  color: #666;
+}
+
+.google-login-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.divider {
+  position: relative;
+  text-align: center;
+  margin: 1.5rem 0;
+}
+
+.divider::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: #ddd;
+}
+
+.divider span {
+  position: relative;
+  background: white;
+  padding: 0 10px;
+  color: #888;
+  font-size: 0.9rem;
+}
+
 @media (max-width: 600px) {
   .LoginPage h1 {
     font-size: 1.5rem;

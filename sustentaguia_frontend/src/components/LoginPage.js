@@ -4,6 +4,7 @@ import { useState } from "react"
 import { useNavigate } from "react-router-dom"
 import api from "../config/axios"
 import "../styles/LoginPage.css"
+import { GoogleLogin } from '@react-oauth/google'
 
 function LoginPage() {
   const navigate = useNavigate()
@@ -67,6 +68,31 @@ function LoginPage() {
       setIsLoading(false)
     }
   }
+
+  const handleGoogleLoginSuccess = async (credentialResponse) => {
+    setIsLoading(true)
+    setErrorMessage(null)
+    setSuccessMessage(null)
+    
+    try {
+      const response = await api.post("/auth/google", {
+        token: credentialResponse.credential
+      });
+      
+      if (response.data?.token) {
+        localStorage.setItem("token", response.data.token);
+        navigate("/dashboard");
+      }
+    } catch (error) {
+      setErrorMessage(error.response?.data?.error || "Erro ao fazer login com Google");
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  const handleGoogleLoginError = () => {
+    setErrorMessage("Erro ao realizar login com Google. Por favor, tente novamente.");
+  };
 
   return (
     <div className="LoginPage">
@@ -145,6 +171,18 @@ function LoginPage() {
                 {isLoading ? "Cadastrando..." : "Cadastrar"}
               </button>
             </form>
+            
+            <div className="social-login">
+              <p>Ou registre-se com:</p>
+              <div className="google-login-container">
+                <GoogleLogin
+                  onSuccess={handleGoogleLoginSuccess}
+                  onError={handleGoogleLoginError}
+                  text="signup_with"
+                  useOneTap
+                />
+              </div>
+            </div>
           </section>
         )}
 
@@ -180,6 +218,17 @@ function LoginPage() {
                 {isLoading ? "Entrando..." : "Entrar"}
               </button>
             </form>
+            
+            <div className="social-login">
+              <p>Ou entre com:</p>
+              <div className="google-login-container">
+                <GoogleLogin
+                  onSuccess={handleGoogleLoginSuccess}
+                  onError={handleGoogleLoginError}
+                  useOneTap
+                />
+              </div>
+            </div>
           </section>
         )}
       </main>

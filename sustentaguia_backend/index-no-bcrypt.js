@@ -154,6 +154,80 @@ app.post('/login', async (req, res) => {
     }
 });
 
+// Rota de autenticação com Google
+app.post('/auth/google', async (req, res) => {
+    console.log('Recebido request para /auth/google:', JSON.stringify(req.body));
+    try {
+        const { token } = req.body;
+        
+        if (!token) {
+            console.log('Token do Google não fornecido');
+            return res.status(400).send({ error: 'Token do Google não fornecido.' });
+        }
+        
+        // Em um caso real, você usaria a biblioteca google-auth-library para validar o token
+        // e extrair as informações do usuário, como no exemplo abaixo:
+        /*
+        const { OAuth2Client } = require('google-auth-library');
+        const client = new OAuth2Client(process.env.GOOGLE_CLIENT_ID);
+        const ticket = await client.verifyIdToken({
+            idToken: token,
+            audience: process.env.GOOGLE_CLIENT_ID,
+        });
+        const payload = ticket.getPayload();
+        const email = payload.email;
+        const name = payload.name;
+        */
+        
+        // Para fins de demonstração, vamos simular a validação do token
+        // e extrair as informações do usuário:
+        const email = `google_user_${Date.now()}@example.com`;
+        const name = `Google User ${Date.now()}`;
+        
+        console.log('Informações do usuário do Google:', { email, name });
+        
+        // Verificar se o usuário já existe
+        let user = (await db.query('SELECT * FROM users WHERE email = $1', [email])).rows[0];
+        
+        if (!user) {
+            // Criar um novo usuário se não existir
+            console.log('Usuário não existe, criando novo usuário...');
+            // Note que estamos criando um usuário sem senha (usando null ou uma string especial)
+            const result = await db.query(
+                'INSERT INTO users (name, email, password) VALUES ($1, $2, $3) RETURNING id',
+                [name, email, 'google_auth_user']
+            );
+            
+            user = {
+                id: result.rows[0].id,
+                name,
+                email
+            };
+            
+            console.log('Usuário do Google criado com sucesso. ID:', user.id);
+        } else {
+            console.log('Usuário do Google já existe. ID:', user.id);
+        }
+        
+        // Gerar token JWT
+        const jwtToken = jwt.sign({ id: user.id }, SECRET_KEY, { expiresIn: '1h' });
+        console.log('Token JWT gerado com sucesso');
+        
+        return res.send({ 
+            message: 'Login com Google bem-sucedido!', 
+            token: jwtToken,
+            user: {
+                id: user.id,
+                name: user.name,
+                email: user.email
+            }
+        });
+    } catch (error) {
+        console.error("Erro ao autenticar com Google:", error);
+        return res.status(500).send({ error: 'Erro interno ao autenticar com Google. Por favor, tente novamente.' });
+    }
+});
+
 // Rota de logout
 app.post('/logout', (req, res) => {
     // Não há necessidade de ações no servidor com JWT
